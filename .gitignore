@@ -1,0 +1,9 @@
+# vscode
+.vscode
+
+# idea
+.idea
+
+# python
+__pycache__
+*.pyc
