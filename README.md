@@ -3,6 +3,7 @@
 
 ## requirements
 #### tools
+* nodejs
 * truffle >=4.1.8 <5
 * python3
 * ganache-cli
@@ -17,7 +18,10 @@
 #!/usr/bin/env bash
 git clone https://github.com/MilkyBoat/AttriChain.git
 cd AttriChain
+# complie the block chain smart contract
 truffle complie;
+# start up block chain at localhost
 ganache-cli;
+# start main python program
 python ./app/AttriChain.py
 ```
