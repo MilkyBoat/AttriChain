@@ -17,7 +17,7 @@
 git clone https://github.com/MilkyBoat/AttriChain.git
 cd AttriChain
 truffle migrate --reset;
-ganache-cli -db ./ -g 100000000 -l 4294967295;
+ganache-cli -db ./ -g 10000 -l 4294967295;
 python ./app/AttriChain.py
 ```
 
