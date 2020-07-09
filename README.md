@@ -9,7 +9,7 @@
 #### python libs (aviliable at pypi if no link was attached)
 * web3
 * Crypto
-* [ZeroKnowledge](https://github.com/anudit/zkpython)
+* [ZeroKnowledge](https://github.com/anudit/zkpython)(no need to install, this lib has attached in code)
 
 ## how to run
 ```bash
