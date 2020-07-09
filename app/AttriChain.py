@@ -1,5 +1,5 @@
 from web3 import Web3, Account
-from solc import compile_files, link_code, compile_source
+# from solc import compile_files, link_code, compile_source
 import json
 import os
 import time
