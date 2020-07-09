@@ -1,8 +1,8 @@
 from web3 import Web3, Account
-# from solc import compile_files, link_code, compile_source
 import json
 import os
 import time
+import chainUtil as chain
 import DS
 from ZeroKnowledge.Zk import Zk
 import DTBE
@@ -56,23 +56,9 @@ for i in range(len(attri_addr)):
 for i in range(len(track_addr)):
 	priKey[track_addr[i]] = esk[i]
 
-# 连接本地区块链网络
-w3 = Web3(Web3.HTTPProvider("http://localhost:8545"))
-# 判断是否连接上
-if w3.isConnected() is False:
-	raise Exception('error in connecting')
-
-# 加载本地的已经编译的合约文件，将其解码后取出abi部分和bytecode，生成合约对象
-AttriChain_file = open('./build/contracts/ChainInit.json', 'r', encoding='utf-8')
-AttriChain_json = json.load(AttriChain_file)
-AttriChain = w3.eth.contract(abi=AttriChain_json['abi'], bytecode=AttriChain_json['bytecode'])
-tx_hash = AttriChain.constructor().transact({'from': w3.eth.accounts[0]})
-tx_receipt = None
-while not tx_receipt:
-	tx_receipt = w3.eth.getTransactionReceipt(tx_hash)
-	time.sleep(0.1)
-AttriChain_instance = w3.eth.contract(address=tx_receipt.contractAdress, abi=AttriChain_json['abi'])
-tx = bytes(str(tx_receipt.contractAdress), encoding='ascii')
+# 链接本地区块链并部署合约
+contractAddress = chain.DeployContract()
+tx = bytes(str(contractAddress), encoding='ascii')
 
 # --------------属性发布与追踪--------------------
 # 用户0请求认证a属性
@@ -98,17 +84,15 @@ for tur in pi:
 coded_pi = bytes(coded_pi[:-1], encoding='ascii')
 sigma = DS.sign(fsk, tx + b'|' + P + b'|' + coded_pi + b'|' + C_ttbe + b'|' + fpk)
 Ce = C_ttbe + b'|' + fpk + b'|' + sigma + b'|' + coded_pi
-# Ce = str(Ce)[2:-1] # 如果bytes类型数据不能作为参数传入，则使用str类型，但是可能因为编码问题出事，尽量不用
+Ce = str(Ce)[2:-1]
 # 发送Ce到链上
-tx_hash = AttriChain_instance.functions.setCe(Ce).transact({'from': w3.eth.accounts[0]})
-tx_receipt = w3.eth.waitForTransactionReceipt(tx_hash)
+tx_receipt = chain.SaveStr(contractAddress, Ce)
 
 # 追踪（该过程中出现的变量为避免冲突一律带t_前缀）
 gamma = []
 # -------- Parse()
-t_Ce = AttriChain_instance.functions.getCe().call()
-# t_Ce = t_Ce[2:-1] # 如果字符串还带着b前缀，用这个去掉
-t_Ce_info = str(t_Ce).split(b'|')
+t_Ce = chain.ReadStr(contractAddress)
+t_Ce_info = str(t_Ce).split('|')
 t_C_ttbe = t_Ce_info[0]
 t_fpk = t_Ce_info[1]
 t_sigma = t_Ce_info[2]

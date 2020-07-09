@@ -1,9 +1,7 @@
-var chainInit = artifacts.require("./ChainInit.sol");
+var chain = artifacts.require("./AttriChain.sol");
 // var test = artifacts.require("./test.sol")
 
-
 module.exports = function(deployer) {
-    deployer.deploy(chainInit);
+    deployer.deploy(chain);
     // deployer.deploy(test);
-    // deployer.deploy()
 };
