@@ -21,7 +21,7 @@ cd AttriChain
 # complie the block chain smart contract
 truffle complie;
 # start up block chain at localhost
-ganache-cli;
+ganache-cli -db;
 # start main python program
 python ./app/AttriChain.py
 ```

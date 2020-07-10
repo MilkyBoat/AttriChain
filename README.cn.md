@@ -21,7 +21,7 @@ cd AttriChain
 # 编译合约
 truffle complie;
 # 启动本地区块链
-ganache-cli;
+ganache-cli -db;
 # 启动python主程序
 python ./app/AttriChain.py
 ```
