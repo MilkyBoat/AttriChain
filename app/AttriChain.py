@@ -1,11 +1,17 @@
 from web3 import Web3, Account
 import json
 import os
-import time
+import pickle
+import base64
+import struct
+from time import time
 import chainUtil as chain
 import DS
 from ZeroKnowledge.Zk import Zk
-import DTBE
+import LibDTBE
+from bplib.bp import BpGroup
+from bplib.bp import G1Elem
+from petlib.pack import encode, decode
 
 # -----------------基本变量-------------------------
 # 账户信息
@@ -13,6 +19,7 @@ accountType = {}
 user_addr = []
 attri_addr = []
 track_addr = []
+track_limit = 3  # 追踪阈值
 
 user_addr.append(0x90F8bf6A479f320ead074411a4B0e7944Ea8c9C1)
 attri_addr.append(0xFFcf8FDEE72ac11b5c542428B35EEF5769C409f0)
@@ -38,10 +45,11 @@ priKey = {}
 P = b'a1'
 
 # --------------链信息初始化--------------------
+# 合约编译
+os.system('truffle complie')
 # 全局初始化
 zero = Zk()
-# crs = NIZK.setup()
-epk, esk, esvk = DTBE.KeyGen()
+epk, esk, esvk = LibDTBE.KeyGen(track_limit)
 #用户初始化
 for i in range(len(user_addr)):
 	pubK, priK = DS.keyGen()
@@ -68,23 +76,24 @@ attri_a = b'a1'
 
 # 返回属性证书cred
 # -------- Authentication()
-# 组装message, 前271字符为私钥，末尾为属性信息，中间用|分割
-message = pubKey[user_addr[0]] + b'|' + attri_a
+# 组装message, 前271字节为私钥，末尾为属性信息，中间用|||分割
+message = pubKey[user_addr[0]] + b'|||' + attri_a
 cred = DS.sign(priKey[attri_addr[0]], message)
 
 # 用户生成交易
 # -------- Sign()
 fpk, fsk = DS.keyGen()
-C_ttbe = DTBE.encrypt(epk, t=fpk, m=pubKey[user_addr[0]])
+t_para = struct.unpack('>i', fpk[27:31])[0]
+G = BpGroup()
+M_para = G.hashG1(pubKey[user_addr[0]])
+C_dtbe = LibDTBE.Encrypt(epk, t=t_para, M=M_para)
+coded_C_dtbe = encode(C_dtbe)
 sigma_fpk = DS.sign(priKey[user_addr[0]], fpk)
-pi = zero.create(pubKey[user_addr[0]] + b'|' + cred + b'|' + sigma_fpk)
-coded_pi = ''
-for tur in pi:
-	coded_pi += str(tur[0]) + '_' + str(tur[1]) + ','
-coded_pi = bytes(coded_pi[:-1], encoding='ascii')
-sigma = DS.sign(fsk, tx + b'|' + P + b'|' + coded_pi + b'|' + C_ttbe + b'|' + fpk)
-Ce = C_ttbe + b'|' + fpk + b'|' + sigma + b'|' + coded_pi
-Ce = str(Ce)[2:-1]
+pi = zero.create(pubKey[user_addr[0]] + b'|||' + cred + b'|||' + sigma_fpk)
+coded_pi = pickle.dumps(pi)
+sigma = DS.sign(fsk, tx + b'|||' + P + b'|||' + coded_pi + b'|||' + coded_C_dtbe + b'|||' + fpk)
+Ce = coded_C_dtbe + b'|||' + fpk + b'|||' + sigma + b'|||' + coded_pi
+Ce = base64.b64encode(Ce).decode()
 # 发送Ce到链上
 tx_receipt = chain.SaveStr(contractAddress, Ce)
 
@@ -92,33 +101,34 @@ tx_receipt = chain.SaveStr(contractAddress, Ce)
 gamma = []
 # -------- Parse()
 t_Ce = chain.ReadStr(contractAddress)
-t_Ce_info = str(t_Ce).split('|')
-t_C_ttbe = t_Ce_info[0]
+t_Ce = base64.b64decode(t_Ce)
+t_Ce_info = t_Ce.split(b'|||')
+t_C_dtbe_str = t_Ce_info[0]
+t_C_dtbe = decode(t_C_dtbe_str)
 t_fpk = t_Ce_info[1]
+t_fpk_para = struct.unpack('>i', t_fpk[27:31])[0]
 t_sigma = t_Ce_info[2]
 t_pi_str = t_Ce_info[3]
-t_pi = t_pi_str.split(',')
-for i in range(len(t_pi)):
-	t_sp = t_pi[i].split('_')
-	t_pi[i] = (int(t_sp[0]), int(t_sp[1]))
+t_pi = pickle.loads(t_pi_str)
 
 # -------- Trace()
 secrets = zero.getSecret()
 verify_result = zero.verifier.verify(secrets, t_pi)
+print('verify_result: ', verify_result)
 if verify_result is False:
 	raise Exception("error when verifying NIZK pi")
-for i in range(track_addr):
-	vi = DTBE.shareDec(epk, priKey[track_addr[i]], fpk, C_ttbe)
+for i in range(track_limit):
+	vi = LibDTBE.shareDec(epk, priKey[track_addr[i]], t_fpk_para, t_C_dtbe)
 	gamma.append(vi)
 
 # -------- Collect()
-for i in range(track_addr):
-	ri = DTBE.shareVerify(epk, esvk[i], fpk, gamma[i], C_ttbe)
+for i in range(track_limit):
+	ri = LibDTBE.shareVerify(epk, esvk[i], t_fpk_para, gamma[i], t_C_dtbe)
 	if ri == 0:
 		raise Exception('error in collect, clue is wrong')
-t_upk = DTBE.combine(epk, esvk, fpk, gamma, C_ttbe)
+t_upk = LibDTBE.Combine(epk, esvk, t_fpk_para, gamma, t_C_dtbe)
 
-if t_upk == pubKey[user_addr[0]]:
+if t_upk == M_para:
 	print('attribute verified successfully')
 else:
 	print('error when verifying attribute')

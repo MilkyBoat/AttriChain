@@ -12,16 +12,16 @@
 * web3
 * Crypto
 * [ZeroKnowledge](https://github.com/anudit/zkpython)(no need to install, this lib has attached in code)
+* petlib
+* bplib
 
 ## how to run
 ```bash
 #!/usr/bin/env bash
 git clone https://github.com/MilkyBoat/AttriChain.git
-cd AttriChain
-# complie the block chain smart contract
-truffle complie;
+cd AttriChain/app
 # start up block chain at localhost
-ganache-cli -db;
+ganache-cli -db -l 10000000 -g 100;
 # start main python program
-python ./app/AttriChain.py
+python AttriChain.py
 ```
