@@ -39,7 +39,7 @@ def SaveStr(contractAddress,inputstr):
     #web3下的etherum库，通过contract方法，去连接地址为contractAddress的合约，合约的abi是从json对象中提取出的，最终返回调用合约的对象
     contract_instance = w3.eth.contract(address=contractAddress, abi=AttriChain_json['abi'])
 
-    tx_hash = contract_instance.functions.setStr(inputstr).transact({'from': w3.eth.accounts[0]})
+    tx_hash = contract_instance.functions.setCe(inputstr).transact({'from': w3.eth.accounts[0]})
     tx_receipt = w3.eth.waitForTransactionReceipt(tx_hash)
     #tx_receipt表示执行结果
     return tx_receipt
@@ -56,7 +56,7 @@ def ReadStr(contractAddress):
     #正确读取，并返回字符串strr
     contract_instance = w3.eth.contract(address=contractAddress, abi=AttriChain_json['abi'])
     #call()表示直接执行
-    strr = contract_instance.functions.getStr().call()
+    strr = contract_instance.functions.getCe().call()
     return strr
 
 
