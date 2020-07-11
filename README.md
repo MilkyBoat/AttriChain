@@ -7,6 +7,7 @@
 * truffle >=4.1.8 <5
 * python3
 * ganache-cli
+* openssl
 
 #### python libs (aviliable at pypi if no link was attached)
 * web3
