@@ -7,6 +7,7 @@
 * truffle 不低于4.1.8且不高于5
 * python3
 * ganache-cli
+* openSSL
 
 > python库（没有附带链接的都可以通过pip安装）
 * web3
