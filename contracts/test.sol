@@ -1,17 +1,14 @@
 pragma solidity >=0.4.2;
 
 import "./nizk/LibNIZK.sol";
-import "./dtbe/LibDTBE.sol";
+import "./LibDTBE.sol";
 
-contract test{
-    using LibNIZK for *;
-    using LibDTBE for *;
+contract test {
+    constructor() public {
 
-    function nizk_setup() public {
-        LibNIZK.nizk_setup();
     }
 
-    // function nizk_setup() public {
-    //     LibNIZK.nizk_setup();
-    // }
+    function request(uint uid) public {
+        
+    }
 }

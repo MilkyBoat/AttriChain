@@ -1,5 +1,8 @@
+
 from web3 import Web3, Account
 import json
+import os
+import time
 
 contracts_path = '../build/contracts/AttriChain.json'
 
@@ -22,7 +25,6 @@ def DeployContract():
     contractAddress = tx_receipt.contractAddress
     # 返回合约地址
     return contractAddress
-
 
     #contractAddress合约地址，inputstr为我要存入链上的值
 def SaveStr(contractAddress,inputstr):
@@ -57,30 +59,6 @@ def ReadStr(contractAddress):
     strr = contract_instance.functions.getCe().call()
     return strr
 
-
-def setVi(contractAddress, vi, i):
-    w3 = Web3(Web3.HTTPProvider("HTTP://127.0.0.1:8545"))
-    if w3.isConnected() is False:
-	    raise Exception('error in connecting')
-    AttriChain_file = open(contracts_path, 'r', encoding='utf-8')
-    AttriChain_json = json.load(AttriChain_file)
-    contract_instance = w3.eth.contract(address=contractAddress, abi=AttriChain_json['abi'])
-
-    tx_hash = contract_instance.functions.setVi(vi, i).transact({'from': w3.eth.accounts[0]})
-    tx_receipt = w3.eth.waitForTransactionReceipt(tx_hash)
-    return tx_receipt
-
-
-def getVi(contractAddress, i):
-    w3 = Web3(Web3.HTTPProvider("HTTP://127.0.0.1:8545"))
-    if w3.isConnected() is False:
-	    raise Exception('error in connecting')
-    AttriChain_file = open(contracts_path, 'r', encoding='utf-8')
-    AttriChain_json = json.load(AttriChain_file)
-    contract_instance = w3.eth.contract(address=contractAddress, abi=AttriChain_json['abi'])
-    #call()表示直接执行
-    vi = contract_instance.functions.getVi(i).call()
-    return vi
 
 if __name__ == "__main__":
     # 以下为第一次执行，为部署合约

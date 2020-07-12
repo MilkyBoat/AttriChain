@@ -1,7 +1,7 @@
 pragma solidity >=0.4.2;
 
 import "./nizk/LibNIZK.sol";
-import "./dtbe/LibDTBE.sol";
+import "./LibDTBE.sol";
 
 contract ChainInit {
     using LibNIZK for *;
@@ -20,9 +20,9 @@ contract ChainInit {
     uint public trackNum = 3;
 
     string public crs;
-    LibDTBE.PK epk;
-    LibDTBE.SK[] esk;
-    LibDTBE.SVK[] esvk;
+    string epk;
+    string[] esk;
+    string[] esvk;
 
     event log(address indexed _from, string _info);
 
@@ -46,16 +46,16 @@ contract ChainInit {
 
         // 全局初始化
         crs = LibNIZK.nizk_setup();
-        // (epk, esk, esvk) = LibDTBE.KeyGen(trackNum);
+        (epk, esk, esvk) = LibDTBE.KeyGen();
 
         // 用户初始化，python web3完成
 
         // 属性机构初始化，python web3完成
 
         // 追踪机构初始化
-        // for (i = 0; i<3; i++){
-        //     priKey[track_addr[i]] = esk[i];
-        // }
+        for (i = 0; i<3; i++){
+            priKey[track_addr[i]] = esk[i];
+        }
     }
 
     // 用户初始化函数
