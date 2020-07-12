@@ -37,7 +37,15 @@ library LibNIZK {
         return result;
     }
 
-    function nizk_verifyproof(string pais, string balapubcipher, string traapubcipher, string trabpubcipher, string apukkey, string bpukkey, string nizkpp) internal returns (uint) {
+    function nizk_verifyproof(
+        string pais,
+        string balapubcipher,
+        string traapubcipher,
+        string trabpubcipher,
+        string apukkey,
+        string bpukkey,
+        string nizkpp
+        ) internal returns (uint) {
         string memory cmd = "[69d98d6a04c41b4605aacb7bd2f74bee][16nizk_verifyproof]";
         cmd = cmd.concat("|", pais);
         cmd = cmd.concat("|", balapubcipher);
