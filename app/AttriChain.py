@@ -98,7 +98,6 @@ Ce = base64.b64encode(Ce).decode()
 tx_receipt = chain.SaveStr(contractAddress, Ce)
 
 # 追踪（该过程中出现的变量为避免冲突一律带t_前缀）
-gamma = []
 # -------- Parse()
 t_Ce = chain.ReadStr(contractAddress)
 t_Ce = base64.b64decode(t_Ce)
@@ -119,13 +118,21 @@ if verify_result is False:
 	raise Exception("error when verifying NIZK pi")
 for i in range(track_limit):
 	vi = LibDTBE.shareDec(epk, priKey[track_addr[i]], t_fpk_para, t_C_dtbe)
-	gamma.append(vi)
+	coded_vi = encode(vi.Ci1) + b'|||' + encode(vi.Ci2)
+	coded_vi = base64.b64encode(coded_vi).decode()
+	chain.setVi(contractAddress, coded_vi, i)
 
 # -------- Collect()
+gamma = []
 for i in range(track_limit):
-	ri = LibDTBE.shareVerify(epk, esvk[i], t_fpk_para, gamma[i], t_C_dtbe)
+	t_coded_vi = chain.getVi(contractAddress, i)
+	t_coded_vi = base64.b64decode(t_coded_vi)
+	t_cis = t_coded_vi.split( b'|||')
+	t_vi = LibDTBE.CLUE(decode(t_cis[0]), decode(t_cis[1]))
+	ri = LibDTBE.shareVerify(epk, esvk[i], t_fpk_para, t_vi, t_C_dtbe)
 	if ri == 0:
 		raise Exception('error in collect, clue is wrong')
+	gamma.append(t_vi)
 t_upk = LibDTBE.Combine(epk, esvk, t_fpk_para, gamma, t_C_dtbe)
 
 if t_upk == M_para:
