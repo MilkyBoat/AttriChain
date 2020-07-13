@@ -3,6 +3,7 @@ import json
 
 contracts_path = '../build/contracts/AttriChain.json'
 
+
 def DeployContract():
     # 连接本地区块链网络
     w3 = Web3(Web3.HTTPProvider("HTTP://127.0.0.1:8545"))
@@ -83,6 +84,8 @@ def getVi(contractAddress, i):
     return vi
 
 
+from web3 import Web3, Account
+import json
 def test():
     test_path = '../build/contracts/test.json'
     w3 = Web3(Web3.HTTPProvider("HTTP://127.0.0.1:8545"))
@@ -96,9 +99,14 @@ def test():
     contractAddress = tx_receipt.contractAddress
     contract_instance = w3.eth.contract(address=contractAddress, abi=test_json['abi'])
     # functions
-    contract_instance.functions.nizk_setup().transact({'from': w3.eth.accounts[0]})
-    contract_instance.functions.nizk_add().transact({'from': w3.eth.accounts[0]})
-    contract_instance.functions.nizk_sub().transact({'from': w3.eth.accounts[0]})
+    # contract_instance.functions.nizk_setup().transact({'from': w3.eth.accounts[0]})
+    # contract_instance.functions.nizk_add().transact({'from': w3.eth.accounts[0]})
+    # contract_instance.functions.nizk_sub().transact({'from': w3.eth.accounts[0]})
+
+    contract_instance.functions.nizk_prove().transact({'from': w3.eth.accounts[0]})
+    contract_instance.functions.nizk_verify().transact({'from': w3.eth.accounts[0]})
+
+    # contract_instance.functions.dtbe_keygen().transact({'from': w3.eth.accounts[0]})
 
 
 if __name__ == "__main__":

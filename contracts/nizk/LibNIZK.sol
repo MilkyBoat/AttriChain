@@ -1,148 +1,39 @@
-pragma solidity ^0.4.2;
+pragma solidity ^0.4.14;
 
-import "../utillib/LibString.sol";
-import "../utillib/LibInt.sol";
-import "./LibNizkParam.sol";
+import "../utillib/Curve.sol";
 
-library LibNIZK {
-    using LibString for *;
-    using LibInt for *;
-    using LibNizkParam for *;
+// https://en.wikipedia.org/wiki/Proof_of_knowledge#Schnorr_protocol
+library Schnorr
+{
+    // Costs ~85000 gas, 2x ecmul, + mulmod, addmod, hash etc. overheads
+	function CreateProof( uint256 secret, uint256 message )
+	    constant internal
+	    returns (uint256[2] out_pubkey, uint256 out_s, uint256 out_e)
+	{
+		Curve.G1Point memory xG = Curve.g1mul(Curve.P1(), secret % Curve.N());
+		out_pubkey[0] = xG.X;
+		out_pubkey[1] = xG.Y;
+		uint256 k = uint256(keccak256(abi.encodePacked(message, secret))) % Curve.N();
+		Curve.G1Point memory kG = Curve.g1mul(Curve.P1(), k);
+		out_e = uint256(keccak256(abi.encodePacked(out_pubkey[0], out_pubkey[1], kG.X, kG.Y, message)));
+		out_s = Curve.submod(k, mulmod(secret, out_e, Curve.N()));
+	}
 
-    function nizk_setup() internal view returns (string) {
-        string memory cmd = "[69d98d6a04c41b4605aacb7bd2f74bee][10nizk_setup]";
-
-        uint rLen = 458880*2;
-        string memory result = new string(rLen);
-
-        uint strptr;
-        assembly {
-            strptr := add(result, 0x20)
-        }
-        cmd = cmd.concat("|", strptr.toString());
-
-        bytes32 hash;
-        uint strlen = bytes(cmd).length;
-        assembly {
-            strptr := add(cmd, 0x20)
-            hash := sha3(strptr, strlen)
-        }
-
-        string memory errRet = "";
-        uint ret = uint(hash);
-        if (ret != 0) {
-            return errRet;
-        }
-        
-        return result;
-    }
-
-    function nizk_verifyproof(
-        string pais,
-        string balapubcipher,
-        string traapubcipher,
-        string trabpubcipher,
-        string apukkey,
-        string bpukkey,
-        string nizkpp
-        ) internal returns (uint) {
-        string memory cmd = "[69d98d6a04c41b4605aacb7bd2f74bee][16nizk_verifyproof]";
-        cmd = cmd.concat("|", pais);
-        cmd = cmd.concat("|", balapubcipher);
-        cmd = cmd.concat("|", traapubcipher);
-        cmd = cmd.concat("|", trabpubcipher);
-        cmd = cmd.concat("|", apukkey);
-        cmd = cmd.concat("|", bpukkey);
-        cmd = cmd.concat("|", nizkpp);
-
-
-        uint strptr;
-        bytes32 hash;
-        uint strlen = bytes(cmd).length;
-        assembly {
-            strptr := add(cmd, 0x20)
-            hash := sha3(strptr, strlen)
-        }
-
-        uint ret = uint(hash);
-        return ret;
-    }
-
-    function nizk_apubcipheradd(LibNizkParam.NizkParam param) internal returns (string){
-
-
-        string memory cmd = "[69d98d6a04c41b4605aacb7bd2f74bee][18nizk_apubcipheradd]";
-        cmd = cmd.concat("|", param.cipher1);
-        cmd = cmd.concat("|", param.cipher2);
-
-        string memory result = new string(384);
-
-        uint strptr;
-        assembly {
-            strptr := add(result, 0x20)
-        }
-        cmd = cmd.concat("|", strptr.toString());
-
-        /*verify proof*/
-        cmd = cmd.concat("|", param.pais);
-        cmd = cmd.concat("|", param.balapubcipher);
-        cmd = cmd.concat("|", param.traapubcipher);
-        cmd = cmd.concat("|", param.trabpubcipher);
-        cmd = cmd.concat("|", param.apukkey);
-        cmd = cmd.concat("|", param.bpukkey);
-        cmd = cmd.concat("|", param.nizkpp);
-
-        bytes32 hash;
-        uint strlen = bytes(cmd).length;
-        assembly {
-            strptr := add(cmd, 0x20)
-            hash := sha3(strptr, strlen)
-        }
-
-        uint ret = uint(hash);
-        if (ret != 0) {
-            return "";
-        }
-        
-        return result;
-    }
-
-    function nizk_apubciphersub(LibNizkParam.NizkParam param) internal returns (string){
-
-        string memory cmd = "[69d98d6a04c41b4605aacb7bd2f74bee][18nizk_apubciphersub]";
-        cmd = cmd.concat("|", param.cipher1);
-        cmd = cmd.concat("|", param.cipher2);
-
-        uint rLen = 384;
-        string memory result = new string(rLen);
-
-        uint strptr;
-        assembly {
-            strptr := add(result, 0x20)
-        }
-        cmd = cmd.concat("|", strptr.toString());
-        /*verify proof*/
-        cmd = cmd.concat("|", param.pais);
-        cmd = cmd.concat("|", param.balapubcipher);
-        cmd = cmd.concat("|", param.traapubcipher);
-        cmd = cmd.concat("|", param.trabpubcipher);
-        cmd = cmd.concat("|", param.apukkey);
-        cmd = cmd.concat("|", param.bpukkey);
-        cmd = cmd.concat("|", param.nizkpp);
-
-        bytes32 hash;
-        uint strlen = bytes(cmd).length;
-        assembly {
-            strptr := add(cmd, 0x20)
-            hash := sha3(strptr, strlen)
-        }
-
-        string memory errRet = "";
-        uint ret = uint(hash);
-        if (ret != 0) {
-            return errRet;
-        }
-        
-        return result;
-    }
+	// Costs ~85000 gas, 2x ecmul, 1x ecadd, + small overheads
+	function CalcProof( uint256[2] pubkey, uint256 message, uint256 s, uint256 e )
+	    constant internal
+	    returns (uint256)
+	{
+	    Curve.G1Point memory sG = Curve.g1mul(Curve.P1(), s % Curve.N());
+	    Curve.G1Point memory xG = Curve.G1Point(pubkey[0], pubkey[1]);
+	    Curve.G1Point memory kG = Curve.g1add(sG, Curve.g1mul(xG, e));
+	    return uint256(keccak256(abi.encodePacked(pubkey[0], pubkey[1], kG.X, kG.Y, message)));
+	}
+	
+	function VerifyProof( uint256[2] pubkey, uint256 message, uint256 s, uint256 e )
+	    constant internal
+	    returns (bool)
+	{
+	    return e == CalcProof(pubkey, message, s, e);
+	}
 }

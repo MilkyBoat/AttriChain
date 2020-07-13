@@ -1,3 +1,7 @@
+// This file is MIT Licensed.
+//
+// Copyright 2020 xu yunkai
+
 pragma solidity >=0.4.2;
 
 contract AttriChain{

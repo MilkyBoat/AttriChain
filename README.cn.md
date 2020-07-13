@@ -22,7 +22,7 @@
 git clone https://github.com/MilkyBoat/AttriChain.git
 cd AttriChain/app
 # 启动本地区块链与客户端
-ganache-cli -db -l 10000000 -g 100;
+ganache-cli -db -l 9007199254740991 -g 1
 # 启动python主程序
 python AttriChain.py
 ```

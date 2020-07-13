@@ -1,10 +1,14 @@
+// This file is MIT Licensed.
+//
+// Copyright 2020 xu yunkai
+
 pragma solidity >=0.4.2;
 
-import "./nizk/LibNIZK.sol";
+// import "./nizk/LibNIZK.sol";
 import "./dtbe/LibDTBE.sol";
 
 contract ChainInit {
-    using LibNIZK for *;
+    // using LibNIZK for *;
     using LibDTBE for *;
 
     mapping(address => string) public accountType;
@@ -45,7 +49,7 @@ contract ChainInit {
         }
 
         // 全局初始化
-        crs = LibNIZK.nizk_setup();
+        // crs = LibNIZK.nizk_setup();
         // (epk, esk, esvk) = LibDTBE.KeyGen(trackNum);
 
         // 用户初始化，python web3完成
