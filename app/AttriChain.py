@@ -1,4 +1,5 @@
 from web3 import Web3, Account
+from solc import compile_files
 import json
 import os
 import pickle

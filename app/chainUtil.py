@@ -1,4 +1,5 @@
 from web3 import Web3, Account
+from solc import compile_standard
 import json
 
 contracts_path = '../build/contracts/AttriChain.json'
@@ -85,14 +86,38 @@ def getVi(contractAddress, i):
 
 
 from web3 import Web3, Account
+from solc import compile_standard
 import json
 def test():
-    test_path = '../build/contracts/test.json'
     w3 = Web3(Web3.HTTPProvider("HTTP://127.0.0.1:8545"))
     if w3.isConnected() is False:
 	    raise Exception('error in connecting')
-    test_file = open(test_path, 'r', encoding='utf-8')
-    test_json = json.load(test_file)
+    test_path = '../build/contracts/test.json'
+    # test_file = open(test_path, 'r', encoding='utf-8')
+    # test_json = json.load(test_file)
+    test_file = open('../contracts/test.sol', 'r', encoding='utf-8')
+    test_file = test_file.read()
+    test_json = compile_standard({
+        "language": "Solidity",
+        "sources": {
+            "Greeter.sol": {
+                "content": test_file
+            }
+        },
+        "settings":
+            {
+                "outputSelection": {
+                    "*": {
+                        "*": [
+                            "metadata", 
+                            "evm.bytecode",
+                            "evm.bytecode.sourceMap"
+                        ]
+                    }
+                }
+            }
+    })
+    test_json = test_file.pop("test.sol:test")
     test = w3.eth.contract(abi=test_json['abi'], bytecode=test_json['bytecode'])
     tx_hash = test.constructor().transact({'from': w3.eth.accounts[0]})
     tx_receipt = w3.eth.waitForTransactionReceipt(tx_hash)

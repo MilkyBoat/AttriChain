@@ -18,9 +18,14 @@ contract test{
     uint256 e;
 
     LibDTBE.PK public epk;
-    LibDTBE.SK[3] public esk;
-    LibDTBE.SVK[3] public esvk;
+    LibDTBE.SK[] public esk;
+    LibDTBE.SVK[] public esvk;
     Pairing.G1Point[] public c_dtbe;
+    LibDTBE.CLUE[] public V;
+
+    constructor() public{
+
+    }
 
     function nizk_prove() public {
         (pk, s, e) = Schnorr.CreateProof(12345, 12345);
@@ -31,24 +36,23 @@ contract test{
     }
 
     function dtbe_keygen() public {
-        // LibDTBE.SK[] memory sk;
-        // LibDTBE.SVK[] memory svk;
-        // LibDTBE.KeyGen(3);
-        // for (uint i = 0;i < 3;i++){
-        //     esk[i] = sk[i];
-        // }
-        // for (i = 0;i < 3;i++){
-        //     esvk[i] = svk[i];
-        // }
+        // (epk, esk, esvk) = LibDTBE.KeyGen(3);
     }
 
     function dtbe_encrypt() public {
         Pairing.G1Point memory M;
-        LibDTBE.encrypt(epk, 123456, M);
+        // c_dtbe = LibDTBE.encrypt(epk, 123456, M);
     }
 
-    function dtbe_encrypt() public {
-        Pairing.G1Point memory M;
-        LibDTBE.encrypt(epk, 123456, M);
+    function dtbe_shareVerify(uint i) public returns(bool) {
+        // return LibDTBE.shareVerify(epk, esvk[i], 123456, c_dtbe, V[0]);
+    }
+
+    function dtbe_shareDec(uint i) public {
+        // V[i] = LibDTBE.shareDec(epk, esk[i], 123456, c_dtbe);
+    }
+
+    function dtbe_combine() public {
+        // LibDTBE.combine(epk, esvk, V, c_dtbe, 123456);
     }
 }
