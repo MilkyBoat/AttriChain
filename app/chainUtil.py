@@ -1,5 +1,4 @@
 from web3 import Web3, Account
-from solc import compile_standard
 import json
 
 contracts_path = '../build/contracts/AttriChain.json'
@@ -44,6 +43,7 @@ def SaveStr(contractAddress,inputstr):
     #tx_receipt表示执行结果
     return tx_receipt
 
+
 def ReadStr(contractAddress):
     # 连接本地区块链网络
     w3 = Web3(Web3.HTTPProvider("HTTP://127.0.0.1:8545"))
@@ -85,53 +85,47 @@ def getVi(contractAddress, i):
     return vi
 
 
-from web3 import Web3, Account
-from solc import compile_standard
-import json
 def test():
     w3 = Web3(Web3.HTTPProvider("HTTP://127.0.0.1:8545"))
     if w3.isConnected() is False:
 	    raise Exception('error in connecting')
-    test_path = '../build/contracts/test.json'
-    # test_file = open(test_path, 'r', encoding='utf-8')
-    # test_json = json.load(test_file)
-    test_file = open('../contracts/test.sol', 'r', encoding='utf-8')
-    test_file = test_file.read()
-    test_json = compile_standard({
-        "language": "Solidity",
-        "sources": {
-            "Greeter.sol": {
-                "content": test_file
-            }
-        },
-        "settings":
-            {
-                "outputSelection": {
-                    "*": {
-                        "*": [
-                            "metadata", 
-                            "evm.bytecode",
-                            "evm.bytecode.sourceMap"
-                        ]
-                    }
-                }
-            }
-    })
-    test_json = test_file.pop("test.sol:test")
-    test = w3.eth.contract(abi=test_json['abi'], bytecode=test_json['bytecode'])
-    tx_hash = test.constructor().transact({'from': w3.eth.accounts[0]})
+
+    # NIZK test
+    test_path = '../build/contracts/test_nizk.json'
+    test_file = open(test_path, 'r', encoding='utf-8')
+    test_json = json.load(test_file)
+    test_nizk = w3.eth.contract(abi=test_json['abi'], bytecode=test_json['bytecode'])
+    tx_hash = test_nizk.constructor().transact({'from': w3.eth.accounts[0]})
     tx_receipt = w3.eth.waitForTransactionReceipt(tx_hash)
-    contractAddress = tx_receipt.contractAddress
-    contract_instance = w3.eth.contract(address=contractAddress, abi=test_json['abi'])
-    # functions
-    # contract_instance.functions.nizk_setup().transact({'from': w3.eth.accounts[0]})
-    # contract_instance.functions.nizk_add().transact({'from': w3.eth.accounts[0]})
-    # contract_instance.functions.nizk_sub().transact({'from': w3.eth.accounts[0]})
+    contractAddress0 = tx_receipt.contractAddress
+    contract_instance0 = w3.eth.contract(address=contractAddress0, abi=test_json['abi'])
 
-    contract_instance.functions.nizk_prove().transact({'from': w3.eth.accounts[0]})
-    contract_instance.functions.nizk_verify().transact({'from': w3.eth.accounts[0]})
+    contract_instance0.functions.nizk_prove().transact({'from': w3.eth.accounts[0]})
+    contract_instance0.functions.nizk_verify().transact({'from': w3.eth.accounts[0]})
 
-    # contract_instance.functions.dtbe_keygen().transact({'from': w3.eth.accounts[0]})
+    # DTBE test
+    test_path = '../build/contracts/test_dtbe.json'
+    test_file = open(test_path, 'r', encoding='utf-8')
+    test_json = json.load(test_file)
+    test_dtbe1 = w3.eth.contract(abi=test_json['abi'], bytecode=test_json['bytecode'])
+    tx_hash = test_dtbe1.constructor().transact({'from': w3.eth.accounts[0]})
+    tx_receipt = w3.eth.waitForTransactionReceipt(tx_hash)
+    contractAddress1 = tx_receipt.contractAddress
+    contract_instance1 = w3.eth.contract(address=contractAddress1, abi=test_json['abi'])
+
+    test_json = json.load(open('../build/contracts/test_dtbe_main.json', 'r', encoding='utf-8'))
+    test_dtbe2 = w3.eth.contract(abi=test_json['abi'], bytecode=test_json['bytecode'])
+    tx_hash = test_dtbe2.constructor().transact({'from': w3.eth.accounts[0]})
+    tx_receipt = w3.eth.waitForTransactionReceipt(tx_hash)
+    contractAddress2 = tx_receipt.contractAddress
+    contract_instance2 = w3.eth.contract(address=contractAddress2, abi=test_json['abi'])
+
+    contract_instance1.functions.dtbe_keygen().estimateGas()
+    contract_instance1.functions.dtbe_keygen().transact({'from': w3.eth.accounts[0]})
+    contract_instance1.functions.dtbe_encrypt().transact({'from': w3.eth.accounts[0]})
+    for i in range(3):
+        contract_instance2.functions.dtbe_shareDec(i).transact({'from': w3.eth.accounts[0]})
+    contract_instance2.functions.dtbe_combine().transact({'from': w3.eth.accounts[0]})
 
 
 if __name__ == "__main__":
