@@ -25,7 +25,7 @@ def DeployContract():
     return contractAddress
 
 
-    #contractAddress合约地址，inputstr为我要存入链上的值
+#contractAddress合约地址，inputstr为我要存入链上的值
 def SaveStr(contractAddress,inputstr):
     # 连接本地区块链网络
     w3 = Web3(Web3.HTTPProvider("HTTP://127.0.0.1:8545"))
@@ -92,8 +92,7 @@ def test():
 
     # NIZK test
     test_path = '../build/contracts/test_nizk.json'
-    test_file = open(test_path, 'r', encoding='utf-8')
-    test_json = json.load(test_file)
+    test_json = json.load(open(test_path, 'r', encoding='utf-8'))
     test_nizk = w3.eth.contract(abi=test_json['abi'], bytecode=test_json['bytecode'])
     tx_hash = test_nizk.constructor().transact({'from': w3.eth.accounts[0]})
     tx_receipt = w3.eth.waitForTransactionReceipt(tx_hash)
@@ -105,8 +104,7 @@ def test():
 
     # DTBE test
     test_path = '../build/contracts/test_dtbe.json'
-    test_file = open(test_path, 'r', encoding='utf-8')
-    test_json = json.load(test_file)
+    test_json = json.load(open(test_path, 'r', encoding='utf-8'))
     test_dtbe1 = w3.eth.contract(abi=test_json['abi'], bytecode=test_json['bytecode'])
     tx_hash = test_dtbe1.constructor().transact({'from': w3.eth.accounts[0]})
     tx_receipt = w3.eth.waitForTransactionReceipt(tx_hash)
@@ -132,9 +130,6 @@ if __name__ == "__main__":
     # 以下为第一次执行，为部署合约
     contractAddress = DeployContract()
     print(contractAddress)
-    
-    # 以下为第二次执行，先设置刚才获取的合约地址，然后可以读写
-    # contractAddress = '0xbc9EaAA3A9CBf3edfc703a319Ca61F87146D044f'
     # 修改一个保存的值
     Str0='0'*2000
     SaveStr(contractAddress,bytes(Str0,encoding='ascii'))
