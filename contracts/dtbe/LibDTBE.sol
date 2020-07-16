@@ -89,7 +89,7 @@ library LibDTBE {
 			if (p.X[0] == 0 && p.X[1] == 0 && p.Y[0] == 0 && p.Y[1] == 0) {
 				pt2 = ECopsG2._ECTwistMulJacobian(s, 1, 0, 1, 0, 0, 0);
 			} else {
-				require(ECopsG2._isOnCurve(p.X[0], p.X[1], p.Y[0], p.Y[1]), 'err05');
+				// require(ECopsG2._isOnCurve(p.X[0], p.X[1], p.Y[0], p.Y[1]), 'err05');
 				pt2 = ECopsG2._ECTwistMulJacobian(s, p.X[0], p.X[1], p.Y[0], p.Y[1], 1, 0);
 			}
 			(x0, x1, y0, y1) = ECopsG2._fromJacobian(pt2[0], pt2[1], pt2[2], pt2[3], pt2[4], pt2[5]);
@@ -102,7 +102,7 @@ library LibDTBE {
 			return r;
 		}
 
-		uint256 constant p = 21888242871839275222246405745257275088696311157297823662689037894645226208583; //
+		uint256 constant p = 21888242871839275222246405745257275088696311157297823662689037894645226208583;
 
 		struct PGroup{
 			uint256 _p; //prime order
@@ -149,6 +149,7 @@ library LibDTBE {
 
 		function KeyGen(/*uint k, */uint n)
 		internal view returns(PK storage, SK[] storage, SVK[] storage){
+			PGroup storage pg;
 			PK storage epk;
 			SK[] storage esk;
 			SVK[] storage esvk;
@@ -156,12 +157,13 @@ library LibDTBE {
 			/*Here should be some codes for generate the prime number p
 			 according to the input parameter k which is security parameter*/
 
-			epk.P._p = p;
-			epk.P._ECG1 = "ECops.sol";
-			epk.P._ECG2 = "ECopsG2.sol";
-			epk.P._pairing = "Pairing.sol";
-			epk.P.G = Pairing.P1();
-			epk.P._G = Pairing.P2();
+			pg._p = p;
+			pg.G = Pairing.P1();
+			pg._G = Pairing.P2();
+			pg._ECG1 = "ECops.sol";
+			pg._ECG2 = "ECopsG2.sol";
+			pg._pairing = "Pairing.sol";
+			epk.P = pg;
 
 			/*here we need to generate the random variables in the P group
 			(a prime-order biliner group)*/
@@ -170,9 +172,9 @@ library LibDTBE {
 			uint256 z = rand(p);
 			uint256[] memory _ui = new uint256[](n);
 			uint256[] memory _vi = new uint256[](n);
-
 			uint256 u = 0; //sum of ui
 			uint256 v = 0; //sum of vi
+
 			//calculate secret key
 			uint i = 0;
 			while(i < n){
@@ -188,7 +190,7 @@ library LibDTBE {
 				i++;
 			}
 
-			//calculate the  H and _H
+			// calculate the  H and _H
 			epk.H = G1mul(Pairing.P1(), h);
 			epk._H = G2mul(Pairing.P2(), h);
 
@@ -204,7 +206,7 @@ library LibDTBE {
 			epk.Z = G1mul(epk.V, z);
 			epk._Z = G2mul(epk._V, z);
 
-			//initialize the SVK
+			// initialize the SVK
 			i = 0;
 			while(i < n){
 				esvk.push(SVK({
@@ -280,7 +282,7 @@ library LibDTBE {
 				(!isVaild(epk, t, Cdtbe)),
 				"ERROR!Forced to stop."
 			);
-			CLUE storage vi;// = new CLUE[](len);
+			CLUE vi;// = new CLUE[](len);
 			vi.Ci1 = G1mul(Cdtbe[0], eski.ui);
 			vi.Ci2 = G1mul(Cdtbe[1], eski.vi);
 			return vi;
@@ -288,10 +290,10 @@ library LibDTBE {
 
 		function shareVerify(PK epk, SVK esvki, uint256 t, Pairing.G1Point[] storage Cdtbe, CLUE vi)
 		internal view returns(bool){
-			require(
-				(!isVaild(epk, t, Cdtbe)),
-				"ERROR!Forced to stop."
-			);
+			// require(
+			// 	(!isVaild(epk, t, Cdtbe)),
+			// 	"ERROR!Forced to stop."
+			// );
 
 			Pairing.G1Point[] memory p11 = new Pairing.G1Point[](2);//
 			Pairing.G2Point[] memory p12 = new Pairing.G2Point[](2);
@@ -343,5 +345,4 @@ library LibDTBE {
 			Pairing.G1Point memory M = G1add(tmp, Cdtbe[2]);
 			return M;
 		}
-
 }

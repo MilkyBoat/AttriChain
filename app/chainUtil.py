@@ -118,9 +118,21 @@ def test():
     contractAddress2 = tx_receipt.contractAddress
     contract_instance2 = w3.eth.contract(address=contractAddress2, abi=test_json['abi'])
 
-    contract_instance1.functions.dtbe_keygen().estimateGas()
-    contract_instance1.functions.dtbe_keygen().transact({'from': w3.eth.accounts[0]})
+    # contract_instance1.functions.dtbe_keygen_1().estimateGas()
+    contract_instance1.functions.dtbe_keygen_1().transact({'from': w3.eth.accounts[0]})
+    contract_instance1.functions.dtbe_keygen_2().transact({'from': w3.eth.accounts[0]})
+    contract_instance1.functions.dtbe_keygen_3().transact({'from': w3.eth.accounts[0]})
+    contract_instance1.functions.dtbe_keygen_4().transact({'from': w3.eth.accounts[0]})
+    contract_instance1.functions.dtbe_keygen_5().transact({'from': w3.eth.accounts[0]})
+    contract_instance1.functions.dtbe_keygen_6().transact({'from': w3.eth.accounts[0]})
+    for i in range(3):
+        contract_instance1.functions.dtbe_keygen_7(i).transact({'from': w3.eth.accounts[0]})
+        contract_instance1.functions.dtbe_keygen_8(i).transact({'from': w3.eth.accounts[0]})
+    contract_instance1.functions.dtbe_keygen_9().transact({'from': w3.eth.accounts[0]})
+    
     contract_instance1.functions.dtbe_encrypt().transact({'from': w3.eth.accounts[0]})
+
+    # contract_instance2.functions.dtbe_shareDec(0).estimateGas()
     for i in range(3):
         contract_instance2.functions.dtbe_shareDec(i).transact({'from': w3.eth.accounts[0]})
     contract_instance2.functions.dtbe_combine().transact({'from': w3.eth.accounts[0]})

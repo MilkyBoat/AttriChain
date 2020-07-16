@@ -6,7 +6,6 @@ pragma solidity >=0.4.2;
 
 // import "./nizk/LibNizk.sol";
 import "./dtbe/LibDTBE.sol";
-// import "./utillib/Pairing.sol";
 
 contract test{
     // using Schnorr for *;
@@ -17,6 +16,7 @@ contract test{
     // uint256 s;
     // uint256 e;
 
+    LibDTBE.PGroup public pg;
     LibDTBE.PK public epk;
     LibDTBE.SK[] public esk;
     LibDTBE.SVK[] public esvk;
