@@ -7,13 +7,6 @@ pragma solidity >=0.4.2;
 
 import "./dtbe/LibDTBE.sol";
 
-// contract test_dtbe_main{
-//     function setepk(LibDTBE.PK _epk) public;
-//     function setesk(LibDTBE.SK[] _esk) public;
-//     function setesvk(LibDTBE.SVK[] _esvk) public;
-//     function setcdtbe(Pairing.G1Point[] _c_dtbe) public;
-// }
-
 contract test_dtbe{
     using LibDTBE for *;
     using Pairing for *;
@@ -25,7 +18,6 @@ contract test_dtbe{
     Pairing.G1Point[] public c_dtbe;
     // LibDTBE.CLUE[] public V;
 
-    uint p = 21888242871839275222246405745257275088696311157297823662689037894645226208583;
     uint256 h;
     uint256 w;
     uint256 z;
@@ -37,12 +29,11 @@ contract test_dtbe{
     Pairing.G2Point[3] _vi_;
 
 
-    // function get
-
     function dtbe_keygen_1() public {
         // (epk, esk, esvk) = LibDTBE.KeyGen(3);
 
         uint n = 3;
+        uint p = 21888242871839275222246405745257275088696311157297823662689037894645226208583;
         pg._p = p;
         pg._G = Pairing.P2();
 		pg._ECG1 = "ECops.sol";
@@ -148,6 +139,7 @@ contract test_dtbe{
         // Pairing.G1Point memory M = Pairing.G1Point(123, 456);
         // c_dtbe = LibDTBE.encrypt(epk, 123456, M);
 
+        uint p = 21888242871839275222246405745257275088696311157297823662689037894645226208583;
         uint256 r1 = LibDTBE.rand(p);
 		uint256 r2 = LibDTBE.rand(p);
         c_dtbe.push(LibDTBE.G1mul(epk.H, r1));
@@ -157,4 +149,125 @@ contract test_dtbe{
         c_dtbe.push(LibDTBE.G1mul(LibDTBE.G1add(tmp, epk.W), r1));
         c_dtbe.push(LibDTBE.G1mul(LibDTBE.G1add(tmp, epk.Z), r2));
     }
+
+    function getepk1() public returns(uint, uint, uint, uint) {
+        return (epk.H.X, epk.H.Y, epk._H.X[0], epk._H.X[1]);
+    }
+
+    function getepk2() public returns(uint, uint, uint, uint){
+        return (epk._H.Y[0], epk._H.Y[1], epk.U.X, epk.U.Y);
+    }
+
+    function getepk3() public returns(uint, uint, uint, uint){
+        return (epk._U.X[0], epk._U.X[1], epk._U.Y[0], epk._U.Y[1]);
+    }
+
+    function getepk4() public returns(uint, uint, uint, uint){
+        return (epk.V.X, epk.V.Y, epk._V.X[0], epk._V.X[1]);
+    }
+
+    function getepk5() public returns(uint, uint, uint, uint){
+        return (epk._V.Y[0], epk._V.Y[1], epk.W.X, epk.W.Y);
+    }
+
+    function getepk6() public returns(uint, uint, uint, uint){
+        return (epk._W.X[0], epk._W.X[1], epk._W.Y[0], epk._W.Y[1]);
+    }
+
+    function getepk7() public returns(uint, uint, uint, uint){
+        return (epk.Z.X, epk.Z.Y, epk._Z.X[0], epk._Z.X[1]);
+    }
+
+    function getepk8() public returns(uint, uint){
+        return (epk._Z.Y[0], epk._Z.Y[1]);
+    }
+
+    function getesk() public returns(uint, uint, uint, uint, uint, uint) {
+        return (esk[0].ui, esk[0].vi, esk[1].ui, esk[1].vi, esk[2].ui, esk[2].vi);
+    }
+
+    function getesvk1(uint i) public returns(uint, uint, uint, uint) {
+        return (
+        esvk[i].Ui.X[0],
+        esvk[i].Ui.X[1],
+        esvk[i].Ui.Y[0],
+        esvk[i].Ui.Y[1]
+        );
+    }
+
+    function getesvk2(uint i) public returns(uint, uint, uint, uint) {
+        return (
+        esvk[i].Vi.X[0],
+        esvk[i].Vi.X[1],
+        esvk[i].Vi.Y[0],
+        esvk[i].Vi.Y[1]
+        );
+    }
+
+    function getcdtbe1() public returns(uint, uint, uint, uint, uint, uint) {
+        return (
+            c_dtbe[0].X, c_dtbe[0].Y,
+            c_dtbe[1].X, c_dtbe[1].Y,
+            c_dtbe[2].X, c_dtbe[2].Y
+        );
+    }
+
+    function getcdtbe2() public returns(uint, uint, uint, uint) {
+        return (
+            c_dtbe[3].X, c_dtbe[3].Y,
+            c_dtbe[4].X, c_dtbe[4].Y
+            );
+    }
+
+    // function transData(uint main_addr) public {
+    //     test_dtbe_main_interface test_main = test_dtbe_main_interface(main_addr);
+    //     // epk
+    //     uint[] e;
+    //     e.push(epk.H.X); e.push(epk.H.Y);
+    //     e.push(epk._H.X[0]); e.push(epk._H.X[1]); e.push(epk._H.Y[0]); e.push(epk._H.Y[1]);
+    //     e.push(epk.U.X); e.push(epk.U.Y);
+    //     e.push(epk._U.X[0]); e.push(epk._U.X[1]); e.push(epk._U.Y[0]); e.push(epk._U.Y[1]);
+    //     e.push(epk.V.X); e.push(epk.V.Y);
+    //     e.push(epk._V.X[0]); e.push(epk._V.X[1]); e.push(epk._V.Y[0]); e.push(epk._V.Y[1]);
+    //     e.push(epk.W.X); e.push(epk.W.Y);
+    //     e.push(epk._W.X[0]); e.push(epk._W.X[1]); e.push(epk._W.Y[0]); e.push(epk._W.Y[1]);
+    //     e.push(epk.Z.X); e.push(epk.Z.Y);
+    //     e.push(epk._Z.X[0]); e.push(epk._Z.X[1]); e.push(epk._Z.Y[0]); e.push(epk._Z.Y[1]);
+    //     test_main.setepk();
+
+    //     // esk
+    //     e.length = 0;
+    //     uint i = 0;
+    //     while(i<3){
+    //         e.push(esk[i].ui);
+    //         e.push(esk[i].vi);
+    //         i++;
+    //     }
+    //     test_main.setesk(e);
+
+    //     // esvk
+    //     e.length = 0;
+    //     i = 0;
+    //     while(i<3){
+    //         e.push(esvk[i].Ui.X[0]);
+    //         e.push(esvk[i].Ui.X[1]);
+    //         e.push(esvk[i].Ui.Y[0]);
+    //         e.push(esvk[i].Ui.Y[1]);
+    //         e.push(esvk[i].Vi.X[0]);
+    //         e.push(esvk[i].Vi.X[1]);
+    //         e.push(esvk[i].Vi.Y[0]);
+    //         e.push(esvk[i].Vi.Y[1]);
+    //         i++;
+    //     }
+    //     test_main.setesk(e);
+
+    //     // c_dtbe
+    //     e.length = 0;
+    //     i = 0;
+    //     while(i<5){
+    //         e.push(c_dtbe[i].X);
+    //         e.push(c_dtbe[i].Y);
+    //     }
+    //     test_main.setcdtbe(e);
+    // }
 }

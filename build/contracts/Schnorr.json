@@ -34,7 +34,7 @@
         "id": 1693,
         "nodeType": "ImportDirective",
         "scope": 1908,
-        "sourceUnit": 2565,
+        "sourceUnit": 3760,
         "src": "26:30:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -73,7 +73,7 @@
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                        "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                         "typeString": "struct Curve.G1Point"
                       },
                       "typeName": {
@@ -81,10 +81,10 @@
                         "id": 1710,
                         "name": "Curve.G1Point",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 5751,
+                        "referencedDeclaration": 6946,
                         "src": "370:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_storage_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_storage_ptr",
                           "typeString": "struct Curve.G1Point"
                         }
                       },
@@ -107,10 +107,10 @@
                             "name": "Curve",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6544,
+                            "referencedDeclaration": 7739,
                             "src": "408:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Curve_$6544_$",
+                              "typeIdentifier": "t_type$_t_contract$_Curve_$7739_$",
                               "typeString": "type(library Curve)"
                             }
                           },
@@ -121,10 +121,10 @@
                           "lValueRequested": false,
                           "memberName": "P1",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5795,
+                          "referencedDeclaration": 6990,
                           "src": "408:8:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_G1Point_$5751_memory_ptr_$",
+                            "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_G1Point_$6946_memory_ptr_$",
                             "typeString": "function () pure returns (struct Curve.G1Point memory)"
                           }
                         },
@@ -138,7 +138,7 @@
                         "nodeType": "FunctionCall",
                         "src": "408:10:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                           "typeString": "struct Curve.G1Point memory"
                         }
                       },
@@ -179,10 +179,10 @@
                               "name": "Curve",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 6544,
+                              "referencedDeclaration": 7739,
                               "src": "429:5:1",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_contract$_Curve_$6544_$",
+                                "typeIdentifier": "t_type$_t_contract$_Curve_$7739_$",
                                 "typeString": "type(library Curve)"
                               }
                             },
@@ -193,7 +193,7 @@
                             "lValueRequested": false,
                             "memberName": "N",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 5784,
+                            "referencedDeclaration": 6979,
                             "src": "429:7:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_pure$__$returns$_t_uint256_$",
@@ -224,7 +224,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                           "typeString": "struct Curve.G1Point memory"
                         },
                         {
@@ -238,10 +238,10 @@
                         "name": "Curve",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 6544,
+                        "referencedDeclaration": 7739,
                         "src": "396:5:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Curve_$6544_$",
+                          "typeIdentifier": "t_type$_t_contract$_Curve_$7739_$",
                           "typeString": "type(library Curve)"
                         }
                       },
@@ -252,10 +252,10 @@
                       "lValueRequested": false,
                       "memberName": "g1mul",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 6147,
+                      "referencedDeclaration": 7342,
                       "src": "396:11:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_view$_t_struct$_G1Point_$5751_memory_ptr_$_t_uint256_$returns$_t_struct$_G1Point_$5751_memory_ptr_$",
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_G1Point_$6946_memory_ptr_$_t_uint256_$returns$_t_struct$_G1Point_$6946_memory_ptr_$",
                         "typeString": "function (struct Curve.G1Point memory,uint256) view returns (struct Curve.G1Point memory)"
                       }
                     },
@@ -269,7 +269,7 @@
                     "nodeType": "FunctionCall",
                     "src": "396:43:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                      "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                       "typeString": "struct Curve.G1Point memory"
                     }
                   },
@@ -342,7 +342,7 @@
                         "referencedDeclaration": 1711,
                         "src": "459:2:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                           "typeString": "struct Curve.G1Point memory"
                         }
                       },
@@ -353,7 +353,7 @@
                       "lValueRequested": false,
                       "memberName": "X",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5748,
+                      "referencedDeclaration": 6943,
                       "src": "459:4:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -436,7 +436,7 @@
                         "referencedDeclaration": 1711,
                         "src": "483:2:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                           "typeString": "struct Curve.G1Point memory"
                         }
                       },
@@ -447,7 +447,7 @@
                       "lValueRequested": false,
                       "memberName": "Y",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5750,
+                      "referencedDeclaration": 6945,
                       "src": "483:4:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -561,7 +561,7 @@
                                   "name": "abi",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 6546,
+                                  "referencedDeclaration": 7741,
                                   "src": "521:3:1",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_magic_abi",
@@ -608,7 +608,7 @@
                             "name": "keccak256",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6553,
+                            "referencedDeclaration": 7748,
                             "src": "511:9:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
@@ -677,10 +677,10 @@
                           "name": "Curve",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6544,
+                          "referencedDeclaration": 7739,
                           "src": "559:5:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_Curve_$6544_$",
+                            "typeIdentifier": "t_type$_t_contract$_Curve_$7739_$",
                             "typeString": "type(library Curve)"
                           }
                         },
@@ -691,7 +691,7 @@
                         "lValueRequested": false,
                         "memberName": "N",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 5784,
+                        "referencedDeclaration": 6979,
                         "src": "559:7:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$__$returns$_t_uint256_$",
@@ -736,7 +736,7 @@
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                        "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                         "typeString": "struct Curve.G1Point"
                       },
                       "typeName": {
@@ -744,10 +744,10 @@
                         "id": 1756,
                         "name": "Curve.G1Point",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 5751,
+                        "referencedDeclaration": 6946,
                         "src": "572:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_storage_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_storage_ptr",
                           "typeString": "struct Curve.G1Point"
                         }
                       },
@@ -770,10 +770,10 @@
                             "name": "Curve",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6544,
+                            "referencedDeclaration": 7739,
                             "src": "610:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Curve_$6544_$",
+                              "typeIdentifier": "t_type$_t_contract$_Curve_$7739_$",
                               "typeString": "type(library Curve)"
                             }
                           },
@@ -784,10 +784,10 @@
                           "lValueRequested": false,
                           "memberName": "P1",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5795,
+                          "referencedDeclaration": 6990,
                           "src": "610:8:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_G1Point_$5751_memory_ptr_$",
+                            "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_G1Point_$6946_memory_ptr_$",
                             "typeString": "function () pure returns (struct Curve.G1Point memory)"
                           }
                         },
@@ -801,7 +801,7 @@
                         "nodeType": "FunctionCall",
                         "src": "610:10:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                           "typeString": "struct Curve.G1Point memory"
                         }
                       },
@@ -822,7 +822,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                           "typeString": "struct Curve.G1Point memory"
                         },
                         {
@@ -836,10 +836,10 @@
                         "name": "Curve",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 6544,
+                        "referencedDeclaration": 7739,
                         "src": "598:5:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Curve_$6544_$",
+                          "typeIdentifier": "t_type$_t_contract$_Curve_$7739_$",
                           "typeString": "type(library Curve)"
                         }
                       },
@@ -850,10 +850,10 @@
                       "lValueRequested": false,
                       "memberName": "g1mul",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 6147,
+                      "referencedDeclaration": 7342,
                       "src": "598:11:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_view$_t_struct$_G1Point_$5751_memory_ptr_$_t_uint256_$returns$_t_struct$_G1Point_$5751_memory_ptr_$",
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_G1Point_$6946_memory_ptr_$_t_uint256_$returns$_t_struct$_G1Point_$6946_memory_ptr_$",
                         "typeString": "function (struct Curve.G1Point memory,uint256) view returns (struct Curve.G1Point memory)"
                       }
                     },
@@ -867,7 +867,7 @@
                     "nodeType": "FunctionCall",
                     "src": "598:26:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                      "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                       "typeString": "struct Curve.G1Point memory"
                     }
                   },
@@ -1007,7 +1007,7 @@
                                     "referencedDeclaration": 1757,
                                     "src": "701:2:1",
                                     "typeDescriptions": {
-                                      "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                                      "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                                       "typeString": "struct Curve.G1Point memory"
                                     }
                                   },
@@ -1018,7 +1018,7 @@
                                   "lValueRequested": false,
                                   "memberName": "X",
                                   "nodeType": "MemberAccess",
-                                  "referencedDeclaration": 5748,
+                                  "referencedDeclaration": 6943,
                                   "src": "701:4:1",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_uint256",
@@ -1036,7 +1036,7 @@
                                     "referencedDeclaration": 1757,
                                     "src": "707:2:1",
                                     "typeDescriptions": {
-                                      "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                                      "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                                       "typeString": "struct Curve.G1Point memory"
                                     }
                                   },
@@ -1047,7 +1047,7 @@
                                   "lValueRequested": false,
                                   "memberName": "Y",
                                   "nodeType": "MemberAccess",
-                                  "referencedDeclaration": 5750,
+                                  "referencedDeclaration": 6945,
                                   "src": "707:4:1",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_uint256",
@@ -1097,7 +1097,7 @@
                                   "name": "abi",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 6546,
+                                  "referencedDeclaration": 7741,
                                   "src": "654:3:1",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_magic_abi",
@@ -1144,7 +1144,7 @@
                             "name": "keccak256",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6553,
+                            "referencedDeclaration": 7748,
                             "src": "644:9:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
@@ -1289,10 +1289,10 @@
                                   "name": "Curve",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 6544,
+                                  "referencedDeclaration": 7739,
                                   "src": "773:5:1",
                                   "typeDescriptions": {
-                                    "typeIdentifier": "t_type$_t_contract$_Curve_$6544_$",
+                                    "typeIdentifier": "t_type$_t_contract$_Curve_$7739_$",
                                     "typeString": "type(library Curve)"
                                   }
                                 },
@@ -1303,7 +1303,7 @@
                                 "lValueRequested": false,
                                 "memberName": "N",
                                 "nodeType": "MemberAccess",
-                                "referencedDeclaration": 5784,
+                                "referencedDeclaration": 6979,
                                 "src": "773:7:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_function_internal_pure$__$returns$_t_uint256_$",
@@ -1344,7 +1344,7 @@
                             "name": "mulmod",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6560,
+                            "referencedDeclaration": 7755,
                             "src": "751:6:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_mulmod_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
@@ -1383,10 +1383,10 @@
                           "name": "Curve",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6544,
+                          "referencedDeclaration": 7739,
                           "src": "735:5:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_Curve_$6544_$",
+                            "typeIdentifier": "t_type$_t_contract$_Curve_$7739_$",
                             "typeString": "type(library Curve)"
                           }
                         },
@@ -1397,7 +1397,7 @@
                         "lValueRequested": false,
                         "memberName": "submod",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 5925,
+                        "referencedDeclaration": 7120,
                         "src": "735:12:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
@@ -1637,7 +1637,7 @@
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                        "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                         "typeString": "struct Curve.G1Point"
                       },
                       "typeName": {
@@ -1645,10 +1645,10 @@
                         "id": 1819,
                         "name": "Curve.G1Point",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 5751,
+                        "referencedDeclaration": 6946,
                         "src": "984:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_storage_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_storage_ptr",
                           "typeString": "struct Curve.G1Point"
                         }
                       },
@@ -1671,10 +1671,10 @@
                             "name": "Curve",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6544,
+                            "referencedDeclaration": 7739,
                             "src": "1022:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Curve_$6544_$",
+                              "typeIdentifier": "t_type$_t_contract$_Curve_$7739_$",
                               "typeString": "type(library Curve)"
                             }
                           },
@@ -1685,10 +1685,10 @@
                           "lValueRequested": false,
                           "memberName": "P1",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5795,
+                          "referencedDeclaration": 6990,
                           "src": "1022:8:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_G1Point_$5751_memory_ptr_$",
+                            "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_G1Point_$6946_memory_ptr_$",
                             "typeString": "function () pure returns (struct Curve.G1Point memory)"
                           }
                         },
@@ -1702,7 +1702,7 @@
                         "nodeType": "FunctionCall",
                         "src": "1022:10:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                           "typeString": "struct Curve.G1Point memory"
                         }
                       },
@@ -1743,10 +1743,10 @@
                               "name": "Curve",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 6544,
+                              "referencedDeclaration": 7739,
                               "src": "1038:5:1",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_contract$_Curve_$6544_$",
+                                "typeIdentifier": "t_type$_t_contract$_Curve_$7739_$",
                                 "typeString": "type(library Curve)"
                               }
                             },
@@ -1757,7 +1757,7 @@
                             "lValueRequested": false,
                             "memberName": "N",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 5784,
+                            "referencedDeclaration": 6979,
                             "src": "1038:7:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_pure$__$returns$_t_uint256_$",
@@ -1788,7 +1788,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                           "typeString": "struct Curve.G1Point memory"
                         },
                         {
@@ -1802,10 +1802,10 @@
                         "name": "Curve",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 6544,
+                        "referencedDeclaration": 7739,
                         "src": "1010:5:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Curve_$6544_$",
+                          "typeIdentifier": "t_type$_t_contract$_Curve_$7739_$",
                           "typeString": "type(library Curve)"
                         }
                       },
@@ -1816,10 +1816,10 @@
                       "lValueRequested": false,
                       "memberName": "g1mul",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 6147,
+                      "referencedDeclaration": 7342,
                       "src": "1010:11:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_view$_t_struct$_G1Point_$5751_memory_ptr_$_t_uint256_$returns$_t_struct$_G1Point_$5751_memory_ptr_$",
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_G1Point_$6946_memory_ptr_$_t_uint256_$returns$_t_struct$_G1Point_$6946_memory_ptr_$",
                         "typeString": "function (struct Curve.G1Point memory,uint256) view returns (struct Curve.G1Point memory)"
                       }
                     },
@@ -1833,7 +1833,7 @@
                     "nodeType": "FunctionCall",
                     "src": "1010:38:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                      "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                       "typeString": "struct Curve.G1Point memory"
                     }
                   },
@@ -1855,7 +1855,7 @@
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                        "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                         "typeString": "struct Curve.G1Point"
                       },
                       "typeName": {
@@ -1863,10 +1863,10 @@
                         "id": 1835,
                         "name": "Curve.G1Point",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 5751,
+                        "referencedDeclaration": 6946,
                         "src": "1055:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_storage_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_storage_ptr",
                           "typeString": "struct Curve.G1Point"
                         }
                       },
@@ -1986,10 +1986,10 @@
                         "name": "Curve",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 6544,
+                        "referencedDeclaration": 7739,
                         "src": "1081:5:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Curve_$6544_$",
+                          "typeIdentifier": "t_type$_t_contract$_Curve_$7739_$",
                           "typeString": "type(library Curve)"
                         }
                       },
@@ -2000,10 +2000,10 @@
                       "lValueRequested": false,
                       "memberName": "G1Point",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5751,
+                      "referencedDeclaration": 6946,
                       "src": "1081:13:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_type$_t_struct$_G1Point_$5751_storage_ptr_$",
+                        "typeIdentifier": "t_type$_t_struct$_G1Point_$6946_storage_ptr_$",
                         "typeString": "type(struct Curve.G1Point storage pointer)"
                       }
                     },
@@ -2017,7 +2017,7 @@
                     "nodeType": "FunctionCall",
                     "src": "1081:35:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_G1Point_$5751_memory",
+                      "typeIdentifier": "t_struct$_G1Point_$6946_memory",
                       "typeString": "struct Curve.G1Point memory"
                     }
                   },
@@ -2039,7 +2039,7 @@
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                        "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                         "typeString": "struct Curve.G1Point"
                       },
                       "typeName": {
@@ -2047,10 +2047,10 @@
                         "id": 1849,
                         "name": "Curve.G1Point",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 5751,
+                        "referencedDeclaration": 6946,
                         "src": "1123:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_storage_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_storage_ptr",
                           "typeString": "struct Curve.G1Point"
                         }
                       },
@@ -2071,7 +2071,7 @@
                         "referencedDeclaration": 1820,
                         "src": "1161:2:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                           "typeString": "struct Curve.G1Point memory"
                         }
                       },
@@ -2087,7 +2087,7 @@
                             "referencedDeclaration": 1836,
                             "src": "1177:2:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                              "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                               "typeString": "struct Curve.G1Point memory"
                             }
                           },
@@ -2108,7 +2108,7 @@
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                              "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                               "typeString": "struct Curve.G1Point memory"
                             },
                             {
@@ -2122,10 +2122,10 @@
                             "name": "Curve",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6544,
+                            "referencedDeclaration": 7739,
                             "src": "1165:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Curve_$6544_$",
+                              "typeIdentifier": "t_type$_t_contract$_Curve_$7739_$",
                               "typeString": "type(library Curve)"
                             }
                           },
@@ -2136,10 +2136,10 @@
                           "lValueRequested": false,
                           "memberName": "g1mul",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 6147,
+                          "referencedDeclaration": 7342,
                           "src": "1165:11:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_internal_view$_t_struct$_G1Point_$5751_memory_ptr_$_t_uint256_$returns$_t_struct$_G1Point_$5751_memory_ptr_$",
+                            "typeIdentifier": "t_function_internal_view$_t_struct$_G1Point_$6946_memory_ptr_$_t_uint256_$returns$_t_struct$_G1Point_$6946_memory_ptr_$",
                             "typeString": "function (struct Curve.G1Point memory,uint256) view returns (struct Curve.G1Point memory)"
                           }
                         },
@@ -2153,7 +2153,7 @@
                         "nodeType": "FunctionCall",
                         "src": "1165:18:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                           "typeString": "struct Curve.G1Point memory"
                         }
                       }
@@ -2161,11 +2161,11 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                           "typeString": "struct Curve.G1Point memory"
                         },
                         {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                           "typeString": "struct Curve.G1Point memory"
                         }
                       ],
@@ -2175,10 +2175,10 @@
                         "name": "Curve",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 6544,
+                        "referencedDeclaration": 7739,
                         "src": "1149:5:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Curve_$6544_$",
+                          "typeIdentifier": "t_type$_t_contract$_Curve_$7739_$",
                           "typeString": "type(library Curve)"
                         }
                       },
@@ -2189,10 +2189,10 @@
                       "lValueRequested": false,
                       "memberName": "g1add",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 6103,
+                      "referencedDeclaration": 7298,
                       "src": "1149:11:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_view$_t_struct$_G1Point_$5751_memory_ptr_$_t_struct$_G1Point_$5751_memory_ptr_$returns$_t_struct$_G1Point_$5751_memory_ptr_$",
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_G1Point_$6946_memory_ptr_$_t_struct$_G1Point_$6946_memory_ptr_$returns$_t_struct$_G1Point_$6946_memory_ptr_$",
                         "typeString": "function (struct Curve.G1Point memory,struct Curve.G1Point memory) view returns (struct Curve.G1Point memory)"
                       }
                     },
@@ -2206,7 +2206,7 @@
                     "nodeType": "FunctionCall",
                     "src": "1149:35:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                      "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                       "typeString": "struct Curve.G1Point memory"
                     }
                   },
@@ -2324,7 +2324,7 @@
                                   "referencedDeclaration": 1850,
                                   "src": "1255:2:1",
                                   "typeDescriptions": {
-                                    "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                                    "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                                     "typeString": "struct Curve.G1Point memory"
                                   }
                                 },
@@ -2335,7 +2335,7 @@
                                 "lValueRequested": false,
                                 "memberName": "X",
                                 "nodeType": "MemberAccess",
-                                "referencedDeclaration": 5748,
+                                "referencedDeclaration": 6943,
                                 "src": "1255:4:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
@@ -2353,7 +2353,7 @@
                                   "referencedDeclaration": 1850,
                                   "src": "1261:2:1",
                                   "typeDescriptions": {
-                                    "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                                    "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                                     "typeString": "struct Curve.G1Point memory"
                                   }
                                 },
@@ -2364,7 +2364,7 @@
                                 "lValueRequested": false,
                                 "memberName": "Y",
                                 "nodeType": "MemberAccess",
-                                "referencedDeclaration": 5750,
+                                "referencedDeclaration": 6945,
                                 "src": "1261:4:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
@@ -2414,7 +2414,7 @@
                                 "name": "abi",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 6546,
+                                "referencedDeclaration": 7741,
                                 "src": "1216:3:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_magic_abi",
@@ -2461,7 +2461,7 @@
                           "name": "keccak256",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6553,
+                          "referencedDeclaration": 7748,
                           "src": "1206:9:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
@@ -3076,7 +3076,7 @@
         "id": 1693,
         "nodeType": "ImportDirective",
         "scope": 1908,
-        "sourceUnit": 2565,
+        "sourceUnit": 3760,
         "src": "26:30:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -3115,7 +3115,7 @@
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                        "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                         "typeString": "struct Curve.G1Point"
                       },
                       "typeName": {
@@ -3123,10 +3123,10 @@
                         "id": 1710,
                         "name": "Curve.G1Point",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 5751,
+                        "referencedDeclaration": 6946,
                         "src": "370:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_storage_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_storage_ptr",
                           "typeString": "struct Curve.G1Point"
                         }
                       },
@@ -3149,10 +3149,10 @@
                             "name": "Curve",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6544,
+                            "referencedDeclaration": 7739,
                             "src": "408:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Curve_$6544_$",
+                              "typeIdentifier": "t_type$_t_contract$_Curve_$7739_$",
                               "typeString": "type(library Curve)"
                             }
                           },
@@ -3163,10 +3163,10 @@
                           "lValueRequested": false,
                           "memberName": "P1",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5795,
+                          "referencedDeclaration": 6990,
                           "src": "408:8:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_G1Point_$5751_memory_ptr_$",
+                            "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_G1Point_$6946_memory_ptr_$",
                             "typeString": "function () pure returns (struct Curve.G1Point memory)"
                           }
                         },
@@ -3180,7 +3180,7 @@
                         "nodeType": "FunctionCall",
                         "src": "408:10:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                           "typeString": "struct Curve.G1Point memory"
                         }
                       },
@@ -3221,10 +3221,10 @@
                               "name": "Curve",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 6544,
+                              "referencedDeclaration": 7739,
                               "src": "429:5:1",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_contract$_Curve_$6544_$",
+                                "typeIdentifier": "t_type$_t_contract$_Curve_$7739_$",
                                 "typeString": "type(library Curve)"
                               }
                             },
@@ -3235,7 +3235,7 @@
                             "lValueRequested": false,
                             "memberName": "N",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 5784,
+                            "referencedDeclaration": 6979,
                             "src": "429:7:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_pure$__$returns$_t_uint256_$",
@@ -3266,7 +3266,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                           "typeString": "struct Curve.G1Point memory"
                         },
                         {
@@ -3280,10 +3280,10 @@
                         "name": "Curve",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 6544,
+                        "referencedDeclaration": 7739,
                         "src": "396:5:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Curve_$6544_$",
+                          "typeIdentifier": "t_type$_t_contract$_Curve_$7739_$",
                           "typeString": "type(library Curve)"
                         }
                       },
@@ -3294,10 +3294,10 @@
                       "lValueRequested": false,
                       "memberName": "g1mul",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 6147,
+                      "referencedDeclaration": 7342,
                       "src": "396:11:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_view$_t_struct$_G1Point_$5751_memory_ptr_$_t_uint256_$returns$_t_struct$_G1Point_$5751_memory_ptr_$",
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_G1Point_$6946_memory_ptr_$_t_uint256_$returns$_t_struct$_G1Point_$6946_memory_ptr_$",
                         "typeString": "function (struct Curve.G1Point memory,uint256) view returns (struct Curve.G1Point memory)"
                       }
                     },
@@ -3311,7 +3311,7 @@
                     "nodeType": "FunctionCall",
                     "src": "396:43:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                      "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                       "typeString": "struct Curve.G1Point memory"
                     }
                   },
@@ -3384,7 +3384,7 @@
                         "referencedDeclaration": 1711,
                         "src": "459:2:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                           "typeString": "struct Curve.G1Point memory"
                         }
                       },
@@ -3395,7 +3395,7 @@
                       "lValueRequested": false,
                       "memberName": "X",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5748,
+                      "referencedDeclaration": 6943,
                       "src": "459:4:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -3478,7 +3478,7 @@
                         "referencedDeclaration": 1711,
                         "src": "483:2:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                           "typeString": "struct Curve.G1Point memory"
                         }
                       },
@@ -3489,7 +3489,7 @@
                       "lValueRequested": false,
                       "memberName": "Y",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5750,
+                      "referencedDeclaration": 6945,
                       "src": "483:4:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -3603,7 +3603,7 @@
                                   "name": "abi",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 6546,
+                                  "referencedDeclaration": 7741,
                                   "src": "521:3:1",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_magic_abi",
@@ -3650,7 +3650,7 @@
                             "name": "keccak256",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6553,
+                            "referencedDeclaration": 7748,
                             "src": "511:9:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
@@ -3719,10 +3719,10 @@
                           "name": "Curve",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6544,
+                          "referencedDeclaration": 7739,
                           "src": "559:5:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_Curve_$6544_$",
+                            "typeIdentifier": "t_type$_t_contract$_Curve_$7739_$",
                             "typeString": "type(library Curve)"
                           }
                         },
@@ -3733,7 +3733,7 @@
                         "lValueRequested": false,
                         "memberName": "N",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 5784,
+                        "referencedDeclaration": 6979,
                         "src": "559:7:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$__$returns$_t_uint256_$",
@@ -3778,7 +3778,7 @@
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                        "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                         "typeString": "struct Curve.G1Point"
                       },
                       "typeName": {
@@ -3786,10 +3786,10 @@
                         "id": 1756,
                         "name": "Curve.G1Point",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 5751,
+                        "referencedDeclaration": 6946,
                         "src": "572:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_storage_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_storage_ptr",
                           "typeString": "struct Curve.G1Point"
                         }
                       },
@@ -3812,10 +3812,10 @@
                             "name": "Curve",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6544,
+                            "referencedDeclaration": 7739,
                             "src": "610:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Curve_$6544_$",
+                              "typeIdentifier": "t_type$_t_contract$_Curve_$7739_$",
                               "typeString": "type(library Curve)"
                             }
                           },
@@ -3826,10 +3826,10 @@
                           "lValueRequested": false,
                           "memberName": "P1",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5795,
+                          "referencedDeclaration": 6990,
                           "src": "610:8:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_G1Point_$5751_memory_ptr_$",
+                            "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_G1Point_$6946_memory_ptr_$",
                             "typeString": "function () pure returns (struct Curve.G1Point memory)"
                           }
                         },
@@ -3843,7 +3843,7 @@
                         "nodeType": "FunctionCall",
                         "src": "610:10:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                           "typeString": "struct Curve.G1Point memory"
                         }
                       },
@@ -3864,7 +3864,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                           "typeString": "struct Curve.G1Point memory"
                         },
                         {
@@ -3878,10 +3878,10 @@
                         "name": "Curve",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 6544,
+                        "referencedDeclaration": 7739,
                         "src": "598:5:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Curve_$6544_$",
+                          "typeIdentifier": "t_type$_t_contract$_Curve_$7739_$",
                           "typeString": "type(library Curve)"
                         }
                       },
@@ -3892,10 +3892,10 @@
                       "lValueRequested": false,
                       "memberName": "g1mul",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 6147,
+                      "referencedDeclaration": 7342,
                       "src": "598:11:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_view$_t_struct$_G1Point_$5751_memory_ptr_$_t_uint256_$returns$_t_struct$_G1Point_$5751_memory_ptr_$",
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_G1Point_$6946_memory_ptr_$_t_uint256_$returns$_t_struct$_G1Point_$6946_memory_ptr_$",
                         "typeString": "function (struct Curve.G1Point memory,uint256) view returns (struct Curve.G1Point memory)"
                       }
                     },
@@ -3909,7 +3909,7 @@
                     "nodeType": "FunctionCall",
                     "src": "598:26:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                      "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                       "typeString": "struct Curve.G1Point memory"
                     }
                   },
@@ -4049,7 +4049,7 @@
                                     "referencedDeclaration": 1757,
                                     "src": "701:2:1",
                                     "typeDescriptions": {
-                                      "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                                      "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                                       "typeString": "struct Curve.G1Point memory"
                                     }
                                   },
@@ -4060,7 +4060,7 @@
                                   "lValueRequested": false,
                                   "memberName": "X",
                                   "nodeType": "MemberAccess",
-                                  "referencedDeclaration": 5748,
+                                  "referencedDeclaration": 6943,
                                   "src": "701:4:1",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_uint256",
@@ -4078,7 +4078,7 @@
                                     "referencedDeclaration": 1757,
                                     "src": "707:2:1",
                                     "typeDescriptions": {
-                                      "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                                      "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                                       "typeString": "struct Curve.G1Point memory"
                                     }
                                   },
@@ -4089,7 +4089,7 @@
                                   "lValueRequested": false,
                                   "memberName": "Y",
                                   "nodeType": "MemberAccess",
-                                  "referencedDeclaration": 5750,
+                                  "referencedDeclaration": 6945,
                                   "src": "707:4:1",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_uint256",
@@ -4139,7 +4139,7 @@
                                   "name": "abi",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 6546,
+                                  "referencedDeclaration": 7741,
                                   "src": "654:3:1",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_magic_abi",
@@ -4186,7 +4186,7 @@
                             "name": "keccak256",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6553,
+                            "referencedDeclaration": 7748,
                             "src": "644:9:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
@@ -4331,10 +4331,10 @@
                                   "name": "Curve",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 6544,
+                                  "referencedDeclaration": 7739,
                                   "src": "773:5:1",
                                   "typeDescriptions": {
-                                    "typeIdentifier": "t_type$_t_contract$_Curve_$6544_$",
+                                    "typeIdentifier": "t_type$_t_contract$_Curve_$7739_$",
                                     "typeString": "type(library Curve)"
                                   }
                                 },
@@ -4345,7 +4345,7 @@
                                 "lValueRequested": false,
                                 "memberName": "N",
                                 "nodeType": "MemberAccess",
-                                "referencedDeclaration": 5784,
+                                "referencedDeclaration": 6979,
                                 "src": "773:7:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_function_internal_pure$__$returns$_t_uint256_$",
@@ -4386,7 +4386,7 @@
                             "name": "mulmod",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6560,
+                            "referencedDeclaration": 7755,
                             "src": "751:6:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_mulmod_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
@@ -4425,10 +4425,10 @@
                           "name": "Curve",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6544,
+                          "referencedDeclaration": 7739,
                           "src": "735:5:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_Curve_$6544_$",
+                            "typeIdentifier": "t_type$_t_contract$_Curve_$7739_$",
                             "typeString": "type(library Curve)"
                           }
                         },
@@ -4439,7 +4439,7 @@
                         "lValueRequested": false,
                         "memberName": "submod",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 5925,
+                        "referencedDeclaration": 7120,
                         "src": "735:12:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
@@ -4679,7 +4679,7 @@
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                        "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                         "typeString": "struct Curve.G1Point"
                       },
                       "typeName": {
@@ -4687,10 +4687,10 @@
                         "id": 1819,
                         "name": "Curve.G1Point",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 5751,
+                        "referencedDeclaration": 6946,
                         "src": "984:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_storage_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_storage_ptr",
                           "typeString": "struct Curve.G1Point"
                         }
                       },
@@ -4713,10 +4713,10 @@
                             "name": "Curve",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6544,
+                            "referencedDeclaration": 7739,
                             "src": "1022:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Curve_$6544_$",
+                              "typeIdentifier": "t_type$_t_contract$_Curve_$7739_$",
                               "typeString": "type(library Curve)"
                             }
                           },
@@ -4727,10 +4727,10 @@
                           "lValueRequested": false,
                           "memberName": "P1",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5795,
+                          "referencedDeclaration": 6990,
                           "src": "1022:8:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_G1Point_$5751_memory_ptr_$",
+                            "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_G1Point_$6946_memory_ptr_$",
                             "typeString": "function () pure returns (struct Curve.G1Point memory)"
                           }
                         },
@@ -4744,7 +4744,7 @@
                         "nodeType": "FunctionCall",
                         "src": "1022:10:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                           "typeString": "struct Curve.G1Point memory"
                         }
                       },
@@ -4785,10 +4785,10 @@
                               "name": "Curve",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 6544,
+                              "referencedDeclaration": 7739,
                               "src": "1038:5:1",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_contract$_Curve_$6544_$",
+                                "typeIdentifier": "t_type$_t_contract$_Curve_$7739_$",
                                 "typeString": "type(library Curve)"
                               }
                             },
@@ -4799,7 +4799,7 @@
                             "lValueRequested": false,
                             "memberName": "N",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 5784,
+                            "referencedDeclaration": 6979,
                             "src": "1038:7:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_pure$__$returns$_t_uint256_$",
@@ -4830,7 +4830,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                           "typeString": "struct Curve.G1Point memory"
                         },
                         {
@@ -4844,10 +4844,10 @@
                         "name": "Curve",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 6544,
+                        "referencedDeclaration": 7739,
                         "src": "1010:5:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Curve_$6544_$",
+                          "typeIdentifier": "t_type$_t_contract$_Curve_$7739_$",
                           "typeString": "type(library Curve)"
                         }
                       },
@@ -4858,10 +4858,10 @@
                       "lValueRequested": false,
                       "memberName": "g1mul",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 6147,
+                      "referencedDeclaration": 7342,
                       "src": "1010:11:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_view$_t_struct$_G1Point_$5751_memory_ptr_$_t_uint256_$returns$_t_struct$_G1Point_$5751_memory_ptr_$",
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_G1Point_$6946_memory_ptr_$_t_uint256_$returns$_t_struct$_G1Point_$6946_memory_ptr_$",
                         "typeString": "function (struct Curve.G1Point memory,uint256) view returns (struct Curve.G1Point memory)"
                       }
                     },
@@ -4875,7 +4875,7 @@
                     "nodeType": "FunctionCall",
                     "src": "1010:38:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                      "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                       "typeString": "struct Curve.G1Point memory"
                     }
                   },
@@ -4897,7 +4897,7 @@
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                        "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                         "typeString": "struct Curve.G1Point"
                       },
                       "typeName": {
@@ -4905,10 +4905,10 @@
                         "id": 1835,
                         "name": "Curve.G1Point",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 5751,
+                        "referencedDeclaration": 6946,
                         "src": "1055:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_storage_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_storage_ptr",
                           "typeString": "struct Curve.G1Point"
                         }
                       },
@@ -5028,10 +5028,10 @@
                         "name": "Curve",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 6544,
+                        "referencedDeclaration": 7739,
                         "src": "1081:5:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Curve_$6544_$",
+                          "typeIdentifier": "t_type$_t_contract$_Curve_$7739_$",
                           "typeString": "type(library Curve)"
                         }
                       },
@@ -5042,10 +5042,10 @@
                       "lValueRequested": false,
                       "memberName": "G1Point",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5751,
+                      "referencedDeclaration": 6946,
                       "src": "1081:13:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_type$_t_struct$_G1Point_$5751_storage_ptr_$",
+                        "typeIdentifier": "t_type$_t_struct$_G1Point_$6946_storage_ptr_$",
                         "typeString": "type(struct Curve.G1Point storage pointer)"
                       }
                     },
@@ -5059,7 +5059,7 @@
                     "nodeType": "FunctionCall",
                     "src": "1081:35:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_G1Point_$5751_memory",
+                      "typeIdentifier": "t_struct$_G1Point_$6946_memory",
                       "typeString": "struct Curve.G1Point memory"
                     }
                   },
@@ -5081,7 +5081,7 @@
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                        "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                         "typeString": "struct Curve.G1Point"
                       },
                       "typeName": {
@@ -5089,10 +5089,10 @@
                         "id": 1849,
                         "name": "Curve.G1Point",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 5751,
+                        "referencedDeclaration": 6946,
                         "src": "1123:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_storage_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_storage_ptr",
                           "typeString": "struct Curve.G1Point"
                         }
                       },
@@ -5113,7 +5113,7 @@
                         "referencedDeclaration": 1820,
                         "src": "1161:2:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                           "typeString": "struct Curve.G1Point memory"
                         }
                       },
@@ -5129,7 +5129,7 @@
                             "referencedDeclaration": 1836,
                             "src": "1177:2:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                              "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                               "typeString": "struct Curve.G1Point memory"
                             }
                           },
@@ -5150,7 +5150,7 @@
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                              "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                               "typeString": "struct Curve.G1Point memory"
                             },
                             {
@@ -5164,10 +5164,10 @@
                             "name": "Curve",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6544,
+                            "referencedDeclaration": 7739,
                             "src": "1165:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Curve_$6544_$",
+                              "typeIdentifier": "t_type$_t_contract$_Curve_$7739_$",
                               "typeString": "type(library Curve)"
                             }
                           },
@@ -5178,10 +5178,10 @@
                           "lValueRequested": false,
                           "memberName": "g1mul",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 6147,
+                          "referencedDeclaration": 7342,
                           "src": "1165:11:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_internal_view$_t_struct$_G1Point_$5751_memory_ptr_$_t_uint256_$returns$_t_struct$_G1Point_$5751_memory_ptr_$",
+                            "typeIdentifier": "t_function_internal_view$_t_struct$_G1Point_$6946_memory_ptr_$_t_uint256_$returns$_t_struct$_G1Point_$6946_memory_ptr_$",
                             "typeString": "function (struct Curve.G1Point memory,uint256) view returns (struct Curve.G1Point memory)"
                           }
                         },
@@ -5195,7 +5195,7 @@
                         "nodeType": "FunctionCall",
                         "src": "1165:18:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                           "typeString": "struct Curve.G1Point memory"
                         }
                       }
@@ -5203,11 +5203,11 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                           "typeString": "struct Curve.G1Point memory"
                         },
                         {
-                          "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                          "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                           "typeString": "struct Curve.G1Point memory"
                         }
                       ],
@@ -5217,10 +5217,10 @@
                         "name": "Curve",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 6544,
+                        "referencedDeclaration": 7739,
                         "src": "1149:5:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Curve_$6544_$",
+                          "typeIdentifier": "t_type$_t_contract$_Curve_$7739_$",
                           "typeString": "type(library Curve)"
                         }
                       },
@@ -5231,10 +5231,10 @@
                       "lValueRequested": false,
                       "memberName": "g1add",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 6103,
+                      "referencedDeclaration": 7298,
                       "src": "1149:11:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_view$_t_struct$_G1Point_$5751_memory_ptr_$_t_struct$_G1Point_$5751_memory_ptr_$returns$_t_struct$_G1Point_$5751_memory_ptr_$",
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_G1Point_$6946_memory_ptr_$_t_struct$_G1Point_$6946_memory_ptr_$returns$_t_struct$_G1Point_$6946_memory_ptr_$",
                         "typeString": "function (struct Curve.G1Point memory,struct Curve.G1Point memory) view returns (struct Curve.G1Point memory)"
                       }
                     },
@@ -5248,7 +5248,7 @@
                     "nodeType": "FunctionCall",
                     "src": "1149:35:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                      "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                       "typeString": "struct Curve.G1Point memory"
                     }
                   },
@@ -5366,7 +5366,7 @@
                                   "referencedDeclaration": 1850,
                                   "src": "1255:2:1",
                                   "typeDescriptions": {
-                                    "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                                    "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                                     "typeString": "struct Curve.G1Point memory"
                                   }
                                 },
@@ -5377,7 +5377,7 @@
                                 "lValueRequested": false,
                                 "memberName": "X",
                                 "nodeType": "MemberAccess",
-                                "referencedDeclaration": 5748,
+                                "referencedDeclaration": 6943,
                                 "src": "1255:4:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
@@ -5395,7 +5395,7 @@
                                   "referencedDeclaration": 1850,
                                   "src": "1261:2:1",
                                   "typeDescriptions": {
-                                    "typeIdentifier": "t_struct$_G1Point_$5751_memory_ptr",
+                                    "typeIdentifier": "t_struct$_G1Point_$6946_memory_ptr",
                                     "typeString": "struct Curve.G1Point memory"
                                   }
                                 },
@@ -5406,7 +5406,7 @@
                                 "lValueRequested": false,
                                 "memberName": "Y",
                                 "nodeType": "MemberAccess",
-                                "referencedDeclaration": 5750,
+                                "referencedDeclaration": 6945,
                                 "src": "1261:4:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
@@ -5456,7 +5456,7 @@
                                 "name": "abi",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 6546,
+                                "referencedDeclaration": 7741,
                                 "src": "1216:3:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_magic_abi",
@@ -5503,7 +5503,7 @@
                           "name": "keccak256",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6553,
+                          "referencedDeclaration": 7748,
                           "src": "1206:9:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
@@ -6097,5 +6097,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.0",
-  "updatedAt": "2020-07-16T15:31:36.035Z"
+  "updatedAt": "2020-07-16T19:43:12.976Z"
 }

@@ -132,6 +132,8 @@ def test():
     
     contract_instance1.functions.dtbe_encrypt().transact({'from': w3.eth.accounts[0]})
 
+    contract_instance2.functions.setData(int(contractAddress1, 16)).transact({'from': w3.eth.accounts[0]})
+
     # contract_instance2.functions.dtbe_shareDec(0).estimateGas()
     for i in range(3):
         contract_instance2.functions.dtbe_shareDec(i).transact({'from': w3.eth.accounts[0]})

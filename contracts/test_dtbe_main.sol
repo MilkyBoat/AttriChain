@@ -7,6 +7,22 @@ pragma solidity >=0.4.2;
 
 import "./dtbe/LibDTBE.sol";
 
+contract dtbe_interface{
+    function getepk1() public returns(uint, uint, uint, uint);
+    function getepk2() public returns(uint, uint, uint, uint);
+    function getepk3() public returns(uint, uint, uint, uint);
+    function getepk4() public returns(uint, uint, uint, uint);
+    function getepk5() public returns(uint, uint, uint, uint);
+    function getepk6() public returns(uint, uint, uint, uint);
+    function getepk7() public returns(uint, uint, uint, uint);
+    function getepk8() public returns(uint, uint);
+    function getesk() public returns(uint, uint, uint, uint, uint, uint);
+    function getesvk1(uint i) public returns(uint, uint, uint, uint);
+    function getesvk2(uint i) public returns(uint, uint, uint, uint);
+    function getcdtbe1() public returns(uint, uint, uint, uint, uint, uint);
+    function getcdtbe2() public returns(uint, uint, uint, uint);
+}
+
 contract test_dtbe_main{
     using LibDTBE for *;
     using Pairing for *;
@@ -23,7 +39,7 @@ contract test_dtbe_main{
 
     function dtbe_shareDec(uint i) public {
         // V[i] = LibDTBE.shareDec(epk, esk[i], 123456, c_dtbe);
-
+        require(c_dtbe.length > 0, 'no param');
         LibDTBE.CLUE vi;
         vi.Ci1 = LibDTBE.G1mul(c_dtbe[0], esk[i].ui);
         vi.Ci2 = LibDTBE.G1mul(c_dtbe[1], esk[i].vi);
@@ -35,13 +51,13 @@ contract test_dtbe_main{
 
         uint len = esvk.length;
         uint i = 0;
-        while(i < len){
-            LibDTBE.shareVerify(epk, esvk[i], 123456, c_dtbe, V[i]);
-            // require(
-            // 	(!shareVerify(epk, esvk[i], t, Cdtbe, v[i])),
-            // 	"ERROR!Forced to stop."
-            // );
-        }
+        // while(i < len){
+        //     LibDTBE.shareVerify(epk, esvk[i], 123456, c_dtbe, V[i]);
+        //     // require(
+        //     // 	(!shareVerify(epk, esvk[i], t, Cdtbe, v[i])),
+        //     // 	"ERROR!Forced to stop."
+        //     // );
+        // }
 
         Pairing.G1Point memory tmp = LibDTBE.G1add(V[0].Ci1, V[0].Ci2);
         i = 1;
@@ -54,27 +70,124 @@ contract test_dtbe_main{
         // return M;
     }
 
-    // function setepk(LibDTBE.PK _epk) public{
-    //     epk = _epk;
+    function setData(uint addr) public {
+        dtbe_interface _dtbe = dtbe_interface(addr);
+
+        uint[30] memory e;
+
+        // epk
+        (e[0], e[1], e[2], e[3]) = _dtbe.getepk1();
+        (e[4], e[5], e[6], e[7]) = _dtbe.getepk2();
+        (e[8], e[9], e[10], e[11]) = _dtbe.getepk3();
+        (e[12], e[13], e[14], e[15]) = _dtbe.getepk4();
+        (e[16], e[17], e[18], e[19]) = _dtbe.getepk5();
+        (e[20], e[21], e[22], e[23]) = _dtbe.getepk6();
+        (e[24], e[25], e[26], e[27]) = _dtbe.getepk7();
+        (e[28], e[29]) = _dtbe.getepk8();
+        LibDTBE.PGroup pg;
+        pg._p = 21888242871839275222246405745257275088696311157297823662689037894645226208583;
+        pg._G = Pairing.P2();
+		pg._ECG1 = "ECops.sol";
+		pg._ECG2 = "ECopsG2.sol";
+		pg._pairing = "Pairing.sol";
+		epk.P = pg;
+        epk.H = Pairing.G1Point(e[0], e[1]);
+		epk._H = Pairing.G2Point([e[2], e[3]], [e[4], e[5]]);
+		epk.U = Pairing.G1Point(e[6], e[7]);
+		epk._U = Pairing.G2Point([e[8], e[9]], [e[10], e[11]]);
+        epk.V = Pairing.G1Point(e[12], e[13]);
+        epk._V = Pairing.G2Point([e[14], e[15]], [e[16], e[17]]);
+        epk.W = Pairing.G1Point(e[18], e[19]);
+        epk._W = Pairing.G2Point([e[20], e[21]], [e[22], e[23]]);
+        epk.Z = Pairing.G1Point(e[24], e[25]);
+        epk._Z = Pairing.G2Point([e[26], e[27]], [e[28], e[29]]);
+
+        // esk
+        (e[0], e[1], e[2], e[3], e[4], e[5]) = _dtbe.getesk();
+        uint i = 0;
+        uint m = 0;
+        while (i<3){
+            esk.push(LibDTBE.SK({
+                ui: e[m],
+                vi: e[m + 1]
+            }));
+            m += 2;
+            i++;
+        }
+
+        // esvk
+        i = 0;
+        while (i<3){
+            (e[0], e[1], e[2], e[3]) = _dtbe.getesvk1(i);
+            (e[4], e[5], e[6], e[7]) = _dtbe.getesvk2(i);
+            esvk.push(LibDTBE.SVK({
+                Ui: Pairing.G2Point([e[0], e[1]], [e[2], e[3]]),
+                Vi: Pairing.G2Point([e[4], e[5]], [e[6], e[7]])
+            }));
+            i++;
+        }
+
+        //c_dtbe
+        (e[0], e[1], e[2], e[3], e[4], e[5]) = _dtbe.getcdtbe1();
+        (e[6], e[7], e[8], e[9]) = _dtbe.getcdtbe2();
+        i = 0;
+        m = 0;
+        while (i<5){
+            c_dtbe.push(Pairing.G1Point(e[m], e[m + 1]));
+            m += 2;
+            i++;
+        }
+    }
+
+    // function setepk(uint[] e) public {
+    //     LibDTBE.PGroup pg;
+    //     pg._p = 21888242871839275222246405745257275088696311157297823662689037894645226208583;
+    //     pg._G = Pairing.P2();
+	// 	pg._ECG1 = "ECops.sol";
+	// 	pg._ECG2 = "ECopsG2.sol";
+	// 	pg._pairing = "Pairing.sol";
+	// 	epk.P = pg;
+    //     epk.H = Pairing.G1Point(e[0], e[1]);
+	// 	epk._H = Pairing.G2Point([e[2], e[3]], [e[4], e[5]]);
+	// 	epk.U = Pairing.G1Point(e[6], e[7]);
+	// 	epk._U = Pairing.G2Point([e[8], e[9]], [e[10], e[11]]);
+    //     epk.V = Pairing.G1Point(e[12], e[13]);
+    //     epk._V = Pairing.G2Point([e[14], e[15]], [e[16], e[17]]);
+    //     epk.W = Pairing.G1Point(e[18], e[19]);
+    //     epk._W = Pairing.G2Point([e[20], e[21]], [e[22], e[23]]);
+    //     epk.Z = Pairing.G1Point(e[24], e[25]);
+    //     epk._Z = Pairing.G2Point([e[26], e[27]], [e[28], e[29]]);
     // }
-    // function setesk(LibDTBE.SK[] _esk) public{
+    // function setesk(uint[] e) public{
     //     uint i = 0;
+    //     uint m = 0;
     //     while (i<3){
-    //         esk.push(_esk[i]);
+    //         esk.push(LibDTBE.SK({
+    //             ui: e[m],
+    //             vi: e[m + 1]
+    //         }));
+    //         m += 2;
     //         i++;
     //     }
     // }
-    // function setesvk(LibDTBE.SVK[] _esvk) public{
+    // function setesvk(uint[] e) public{
     //     uint i = 0;
+    //     uint m = 0;
     //     while (i<3){
-    //         esvk.push(_esvk[i]);
+    //         esvk.push(LibDTBE.SVK({
+    //             Ui: Pairing.G2Point([e[m], e[m + 1]], [e[m + 2], e[m + 3]]),
+    //             Vi: Pairing.G2Point([e[m + 4], e[m + 5]], [e[m + 6], e[m + 7]])
+    //         }));
+    //         m += 4;
     //         i++;
     //     }
     // }
-    // function setcdtbe(Pairing.G1Point[] _c_dtbe) public{
+    // function setcdtbe(uint[] c) public{
     //     uint i = 0;
+    //     uint m = 0;
     //     while (i<5){
-    //         c_dtbe.push(_c_dtbe[i]);
+    //         c_dtbe.push(Pairing.G1Point(c[m], c[m + 1]));
+    //         m += 2;
     //         i++;
     //     }
     // }
