@@ -23,7 +23,6 @@ git clone https://github.com/MilkyBoat/AttriChain.git
 cd AttriChain/app
 # start up block chain at localhost
 ganache-cli -db -l 18446744073709551615 -g 1
-9007199254740991
 # start main python program
 python AttriChain.py
 ```
