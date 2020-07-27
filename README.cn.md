@@ -1,4 +1,6 @@
 # AttriChain
+> 本项目是对以下论文的实现："AttriChain: Decentralized Traceable Anonymous Identities in Privacy-Preserving Permissioned Blockchain"
+
 一种支持存储用户属性并进行链上认证的区块链，本demo基于以太坊与python3的web3.py开发
 
 ## 依赖库
