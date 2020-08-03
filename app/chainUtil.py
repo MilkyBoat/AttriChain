@@ -1,10 +1,8 @@
 from web3 import Web3, Account
 import json
 
-contracts_path = '../build/contracts/AttriChain.json'
 
-
-def DeployContract():
+def DeployContract(contracts_path='../build/contracts/AttriChain.json'):
     # 连接本地区块链网络
     w3 = Web3(Web3.HTTPProvider("HTTP://127.0.0.1:8545"))
     # 判断是否连接上
@@ -33,6 +31,7 @@ def SaveStr(contractAddress,inputstr):
     if w3.isConnected() is False:
 	    raise Exception('error in connecting')
     # 获取abi
+    contracts_path = '../build/contracts/AttriChain_offline.json'
     AttriChain_file = open(contracts_path, 'r', encoding='utf-8')
     AttriChain_json = json.load(AttriChain_file)
     #web3下的etherum库，通过contract方法，去连接地址为contractAddress的合约，合约的abi是从json对象中提取出的，最终返回调用合约的对象
@@ -51,6 +50,7 @@ def ReadStr(contractAddress):
     if w3.isConnected() is False:
 	    raise Exception('error in connecting')
     # 获取abi
+    contracts_path = '../build/contracts/AttriChain_offline.json'
     AttriChain_file = open(contracts_path, 'r', encoding='utf-8')
     AttriChain_json = json.load(AttriChain_file)
     #正确读取，并返回字符串strr
@@ -64,6 +64,7 @@ def setVi(contractAddress, vi, i):
     w3 = Web3(Web3.HTTPProvider("HTTP://127.0.0.1:8545"))
     if w3.isConnected() is False:
 	    raise Exception('error in connecting')
+    contracts_path = '../build/contracts/AttriChain_offline.json'
     AttriChain_file = open(contracts_path, 'r', encoding='utf-8')
     AttriChain_json = json.load(AttriChain_file)
     contract_instance = w3.eth.contract(address=contractAddress, abi=AttriChain_json['abi'])
@@ -77,6 +78,7 @@ def getVi(contractAddress, i):
     w3 = Web3(Web3.HTTPProvider("HTTP://127.0.0.1:8545"))
     if w3.isConnected() is False:
 	    raise Exception('error in connecting')
+    contracts_path = '../build/contracts/AttriChain_offline.json'
     AttriChain_file = open(contracts_path, 'r', encoding='utf-8')
     AttriChain_json = json.load(AttriChain_file)
     contract_instance = w3.eth.contract(address=contractAddress, abi=AttriChain_json['abi'])

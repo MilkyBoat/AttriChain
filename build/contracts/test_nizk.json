@@ -35,14 +35,14 @@
     "absolutePath": "/D/Myproject/AttriChain/contracts/test_nizk.sol",
     "exportedSymbols": {
       "test_nizk": [
-        4125
+        4106
       ]
     },
-    "id": 4126,
+    "id": 4107,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 4084,
+        "id": 4065,
         "literals": [
           "solidity",
           ">=",
@@ -55,9 +55,9 @@
       {
         "absolutePath": "/D/Myproject/AttriChain/contracts/nizk/LibNizk.sol",
         "file": "./nizk/LibNizk.sol",
-        "id": 4085,
+        "id": 4066,
         "nodeType": "ImportDirective",
-        "scope": 4126,
+        "scope": 4107,
         "sourceUnit": 2215,
         "src": "94:28:6",
         "symbolAliases": [],
@@ -69,18 +69,18 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 4125,
+        "id": 4106,
         "linearizedBaseContracts": [
-          4125
+          4106
         ],
         "name": "test_nizk",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
-            "id": 4087,
+            "id": 4068,
             "libraryName": {
               "contractScope": null,
-              "id": 4086,
+              "id": 4067,
               "name": "Schnorr",
               "nodeType": "UserDefinedTypeName",
               "referencedDeclaration": 2214,
@@ -96,10 +96,10 @@
           },
           {
             "constant": false,
-            "id": 4091,
+            "id": 4072,
             "name": "pk",
             "nodeType": "VariableDeclaration",
-            "scope": 4125,
+            "scope": 4106,
             "src": "179:13:6",
             "stateVariable": true,
             "storageLocation": "default",
@@ -109,7 +109,7 @@
             },
             "typeName": {
               "baseType": {
-                "id": 4088,
+                "id": 4069,
                 "name": "uint256",
                 "nodeType": "ElementaryTypeName",
                 "src": "179:7:6",
@@ -118,11 +118,11 @@
                   "typeString": "uint256"
                 }
               },
-              "id": 4090,
+              "id": 4071,
               "length": {
                 "argumentTypes": null,
                 "hexValue": "32",
-                "id": 4089,
+                "id": 4070,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": false,
@@ -149,10 +149,10 @@
           },
           {
             "constant": false,
-            "id": 4093,
+            "id": 4074,
             "name": "s",
             "nodeType": "VariableDeclaration",
-            "scope": 4125,
+            "scope": 4106,
             "src": "199:9:6",
             "stateVariable": true,
             "storageLocation": "default",
@@ -161,7 +161,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 4092,
+              "id": 4073,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
               "src": "199:7:6",
@@ -175,10 +175,10 @@
           },
           {
             "constant": false,
-            "id": 4095,
+            "id": 4076,
             "name": "e",
             "nodeType": "VariableDeclaration",
-            "scope": 4125,
+            "scope": 4106,
             "src": "215:9:6",
             "stateVariable": true,
             "storageLocation": "default",
@@ -187,7 +187,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 4094,
+              "id": 4075,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
               "src": "215:7:6",
@@ -201,14 +201,14 @@
           },
           {
             "body": {
-              "id": 4109,
+              "id": 4090,
               "nodeType": "Block",
               "src": "262:65:6",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 4107,
+                    "id": 4088,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -218,11 +218,11 @@
                       "components": [
                         {
                           "argumentTypes": null,
-                          "id": 4098,
+                          "id": 4079,
                           "name": "pk",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 4091,
+                          "referencedDeclaration": 4072,
                           "src": "274:2:6",
                           "typeDescriptions": {
                             "typeIdentifier": "t_array$_t_uint256_$2_storage",
@@ -231,11 +231,11 @@
                         },
                         {
                           "argumentTypes": null,
-                          "id": 4099,
+                          "id": 4080,
                           "name": "s",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 4093,
+                          "referencedDeclaration": 4074,
                           "src": "278:1:6",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -244,11 +244,11 @@
                         },
                         {
                           "argumentTypes": null,
-                          "id": 4100,
+                          "id": 4081,
                           "name": "e",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 4095,
+                          "referencedDeclaration": 4076,
                           "src": "281:1:6",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -256,7 +256,7 @@
                           }
                         }
                       ],
-                      "id": 4101,
+                      "id": 4082,
                       "isConstant": false,
                       "isInlineArray": false,
                       "isLValue": true,
@@ -277,7 +277,7 @@
                         {
                           "argumentTypes": null,
                           "hexValue": "3132333435",
-                          "id": 4104,
+                          "id": 4085,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -295,7 +295,7 @@
                         {
                           "argumentTypes": null,
                           "hexValue": "3132333435",
-                          "id": 4105,
+                          "id": 4086,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -324,7 +324,7 @@
                         ],
                         "expression": {
                           "argumentTypes": null,
-                          "id": 4102,
+                          "id": 4083,
                           "name": "Schnorr",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
@@ -335,7 +335,7 @@
                             "typeString": "type(library Schnorr)"
                           }
                         },
-                        "id": 4103,
+                        "id": 4084,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -349,7 +349,7 @@
                           "typeString": "function (uint256,uint256) view returns (uint256[2] memory,uint256,uint256)"
                         }
                       },
-                      "id": 4106,
+                      "id": 4087,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -369,14 +369,14 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 4108,
+                  "id": 4089,
                   "nodeType": "ExpressionStatement",
                   "src": "273:46:6"
                 }
               ]
             },
             "documentation": null,
-            "id": 4110,
+            "id": 4091,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -384,19 +384,19 @@
             "name": "nizk_prove",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4096,
+              "id": 4077,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "252:2:6"
             },
             "payable": false,
             "returnParameters": {
-              "id": 4097,
+              "id": 4078,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "262:0:6"
             },
-            "scope": 4125,
+            "scope": 4106,
             "src": "233:94:6",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -404,7 +404,7 @@
           },
           {
             "body": {
-              "id": 4123,
+              "id": 4104,
               "nodeType": "Block",
               "src": "379:62:6",
               "statements": [
@@ -414,11 +414,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 4117,
+                        "id": 4098,
                         "name": "pk",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4091,
+                        "referencedDeclaration": 4072,
                         "src": "417:2:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_uint256_$2_storage",
@@ -428,7 +428,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "3132333435",
-                        "id": 4118,
+                        "id": 4099,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -445,11 +445,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 4119,
+                        "id": 4100,
                         "name": "s",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4093,
+                        "referencedDeclaration": 4074,
                         "src": "428:1:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -458,11 +458,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 4120,
+                        "id": 4101,
                         "name": "e",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4095,
+                        "referencedDeclaration": 4076,
                         "src": "431:1:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -491,7 +491,7 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 4115,
+                        "id": 4096,
                         "name": "Schnorr",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
@@ -502,7 +502,7 @@
                           "typeString": "type(library Schnorr)"
                         }
                       },
-                      "id": 4116,
+                      "id": 4097,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -516,7 +516,7 @@
                         "typeString": "function (uint256[2] memory,uint256,uint256,uint256) view returns (bool)"
                       }
                     },
-                    "id": 4121,
+                    "id": 4102,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -530,15 +530,15 @@
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 4114,
-                  "id": 4122,
+                  "functionReturnParameters": 4095,
+                  "id": 4103,
                   "nodeType": "Return",
                   "src": "390:43:6"
                 }
               ]
             },
             "documentation": null,
-            "id": 4124,
+            "id": 4105,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -546,22 +546,22 @@
             "name": "nizk_verify",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4111,
+              "id": 4092,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "355:2:6"
             },
             "payable": false,
             "returnParameters": {
-              "id": 4114,
+              "id": 4095,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4113,
+                  "id": 4094,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4124,
+                  "scope": 4105,
                   "src": "373:4:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -570,7 +570,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 4112,
+                    "id": 4093,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "373:4:6",
@@ -585,14 +585,14 @@
               ],
               "src": "372:6:6"
             },
-            "scope": 4125,
+            "scope": 4106,
             "src": "335:106:6",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 4126,
+        "scope": 4107,
         "src": "126:320:6"
       }
     ],
@@ -602,14 +602,14 @@
     "absolutePath": "/D/Myproject/AttriChain/contracts/test_nizk.sol",
     "exportedSymbols": {
       "test_nizk": [
-        4125
+        4106
       ]
     },
-    "id": 4126,
+    "id": 4107,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 4084,
+        "id": 4065,
         "literals": [
           "solidity",
           ">=",
@@ -622,9 +622,9 @@
       {
         "absolutePath": "/D/Myproject/AttriChain/contracts/nizk/LibNizk.sol",
         "file": "./nizk/LibNizk.sol",
-        "id": 4085,
+        "id": 4066,
         "nodeType": "ImportDirective",
-        "scope": 4126,
+        "scope": 4107,
         "sourceUnit": 2215,
         "src": "94:28:6",
         "symbolAliases": [],
@@ -636,18 +636,18 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 4125,
+        "id": 4106,
         "linearizedBaseContracts": [
-          4125
+          4106
         ],
         "name": "test_nizk",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
-            "id": 4087,
+            "id": 4068,
             "libraryName": {
               "contractScope": null,
-              "id": 4086,
+              "id": 4067,
               "name": "Schnorr",
               "nodeType": "UserDefinedTypeName",
               "referencedDeclaration": 2214,
@@ -663,10 +663,10 @@
           },
           {
             "constant": false,
-            "id": 4091,
+            "id": 4072,
             "name": "pk",
             "nodeType": "VariableDeclaration",
-            "scope": 4125,
+            "scope": 4106,
             "src": "179:13:6",
             "stateVariable": true,
             "storageLocation": "default",
@@ -676,7 +676,7 @@
             },
             "typeName": {
               "baseType": {
-                "id": 4088,
+                "id": 4069,
                 "name": "uint256",
                 "nodeType": "ElementaryTypeName",
                 "src": "179:7:6",
@@ -685,11 +685,11 @@
                   "typeString": "uint256"
                 }
               },
-              "id": 4090,
+              "id": 4071,
               "length": {
                 "argumentTypes": null,
                 "hexValue": "32",
-                "id": 4089,
+                "id": 4070,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": false,
@@ -716,10 +716,10 @@
           },
           {
             "constant": false,
-            "id": 4093,
+            "id": 4074,
             "name": "s",
             "nodeType": "VariableDeclaration",
-            "scope": 4125,
+            "scope": 4106,
             "src": "199:9:6",
             "stateVariable": true,
             "storageLocation": "default",
@@ -728,7 +728,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 4092,
+              "id": 4073,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
               "src": "199:7:6",
@@ -742,10 +742,10 @@
           },
           {
             "constant": false,
-            "id": 4095,
+            "id": 4076,
             "name": "e",
             "nodeType": "VariableDeclaration",
-            "scope": 4125,
+            "scope": 4106,
             "src": "215:9:6",
             "stateVariable": true,
             "storageLocation": "default",
@@ -754,7 +754,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 4094,
+              "id": 4075,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
               "src": "215:7:6",
@@ -768,14 +768,14 @@
           },
           {
             "body": {
-              "id": 4109,
+              "id": 4090,
               "nodeType": "Block",
               "src": "262:65:6",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 4107,
+                    "id": 4088,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -785,11 +785,11 @@
                       "components": [
                         {
                           "argumentTypes": null,
-                          "id": 4098,
+                          "id": 4079,
                           "name": "pk",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 4091,
+                          "referencedDeclaration": 4072,
                           "src": "274:2:6",
                           "typeDescriptions": {
                             "typeIdentifier": "t_array$_t_uint256_$2_storage",
@@ -798,11 +798,11 @@
                         },
                         {
                           "argumentTypes": null,
-                          "id": 4099,
+                          "id": 4080,
                           "name": "s",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 4093,
+                          "referencedDeclaration": 4074,
                           "src": "278:1:6",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -811,11 +811,11 @@
                         },
                         {
                           "argumentTypes": null,
-                          "id": 4100,
+                          "id": 4081,
                           "name": "e",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 4095,
+                          "referencedDeclaration": 4076,
                           "src": "281:1:6",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -823,7 +823,7 @@
                           }
                         }
                       ],
-                      "id": 4101,
+                      "id": 4082,
                       "isConstant": false,
                       "isInlineArray": false,
                       "isLValue": true,
@@ -844,7 +844,7 @@
                         {
                           "argumentTypes": null,
                           "hexValue": "3132333435",
-                          "id": 4104,
+                          "id": 4085,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -862,7 +862,7 @@
                         {
                           "argumentTypes": null,
                           "hexValue": "3132333435",
-                          "id": 4105,
+                          "id": 4086,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -891,7 +891,7 @@
                         ],
                         "expression": {
                           "argumentTypes": null,
-                          "id": 4102,
+                          "id": 4083,
                           "name": "Schnorr",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
@@ -902,7 +902,7 @@
                             "typeString": "type(library Schnorr)"
                           }
                         },
-                        "id": 4103,
+                        "id": 4084,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -916,7 +916,7 @@
                           "typeString": "function (uint256,uint256) view returns (uint256[2] memory,uint256,uint256)"
                         }
                       },
-                      "id": 4106,
+                      "id": 4087,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -936,14 +936,14 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 4108,
+                  "id": 4089,
                   "nodeType": "ExpressionStatement",
                   "src": "273:46:6"
                 }
               ]
             },
             "documentation": null,
-            "id": 4110,
+            "id": 4091,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -951,19 +951,19 @@
             "name": "nizk_prove",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4096,
+              "id": 4077,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "252:2:6"
             },
             "payable": false,
             "returnParameters": {
-              "id": 4097,
+              "id": 4078,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "262:0:6"
             },
-            "scope": 4125,
+            "scope": 4106,
             "src": "233:94:6",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -971,7 +971,7 @@
           },
           {
             "body": {
-              "id": 4123,
+              "id": 4104,
               "nodeType": "Block",
               "src": "379:62:6",
               "statements": [
@@ -981,11 +981,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 4117,
+                        "id": 4098,
                         "name": "pk",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4091,
+                        "referencedDeclaration": 4072,
                         "src": "417:2:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_uint256_$2_storage",
@@ -995,7 +995,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "3132333435",
-                        "id": 4118,
+                        "id": 4099,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -1012,11 +1012,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 4119,
+                        "id": 4100,
                         "name": "s",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4093,
+                        "referencedDeclaration": 4074,
                         "src": "428:1:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1025,11 +1025,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 4120,
+                        "id": 4101,
                         "name": "e",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4095,
+                        "referencedDeclaration": 4076,
                         "src": "431:1:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1058,7 +1058,7 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 4115,
+                        "id": 4096,
                         "name": "Schnorr",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
@@ -1069,7 +1069,7 @@
                           "typeString": "type(library Schnorr)"
                         }
                       },
-                      "id": 4116,
+                      "id": 4097,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1083,7 +1083,7 @@
                         "typeString": "function (uint256[2] memory,uint256,uint256,uint256) view returns (bool)"
                       }
                     },
-                    "id": 4121,
+                    "id": 4102,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1097,15 +1097,15 @@
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 4114,
-                  "id": 4122,
+                  "functionReturnParameters": 4095,
+                  "id": 4103,
                   "nodeType": "Return",
                   "src": "390:43:6"
                 }
               ]
             },
             "documentation": null,
-            "id": 4124,
+            "id": 4105,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -1113,22 +1113,22 @@
             "name": "nizk_verify",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4111,
+              "id": 4092,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "355:2:6"
             },
             "payable": false,
             "returnParameters": {
-              "id": 4114,
+              "id": 4095,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4113,
+                  "id": 4094,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4124,
+                  "scope": 4105,
                   "src": "373:4:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1137,7 +1137,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 4112,
+                    "id": 4093,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "373:4:6",
@@ -1152,14 +1152,14 @@
               ],
               "src": "372:6:6"
             },
-            "scope": 4125,
+            "scope": 4106,
             "src": "335:106:6",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 4126,
+        "scope": 4107,
         "src": "126:320:6"
       }
     ],
@@ -1171,5 +1171,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.0",
-  "updatedAt": "2020-07-16T19:25:14.271Z"
+  "updatedAt": "2020-07-17T04:29:27.685Z"
 }

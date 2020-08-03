@@ -73,9 +73,4 @@ contract ChainInit {
         pubKey[attri_addr[aid]] = psk;
         priKey[attri_addr[aid]] = usk;
     }
-
-    function helloWorld() public returns (string){
-        emit log(msg.sender, "helloWorld!");
-        return 'helloworld!';
-    }
 }
